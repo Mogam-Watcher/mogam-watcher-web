@@ -5,8 +5,7 @@ import Home from './components/Home'
 const App = () => {
   return (
     <div className="App">
-      {/* Contents will be here. */}
-      <Home />
+      <h1>Mogam watcher application</h1>
     </div>
   );
 }
