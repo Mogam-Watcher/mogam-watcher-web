@@ -1,7 +1,7 @@
 import './Seat.css'
 
 const Seat = ({isOccupied, until}) => {
-  const className=isOccupied?'seat occupied':'seat vacant';
+  const className=isOccupied?'seat seat-occupied':'seat seat-vacant';
   const time=isOccupied?until:'';
 
   return (

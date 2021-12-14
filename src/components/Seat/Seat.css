@@ -6,11 +6,11 @@
     border-radius: 5px;
   }
   
-  .vacant{
+  .seat-vacant{
     background-color: #DD712B;
   }
   
-  .occupied{
+  .seat-occupied{
     background-color: #E0D1BA;
     color: #1D757D;
   }
