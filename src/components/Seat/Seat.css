@@ -1,0 +1,16 @@
+.seat{
+    width: 50px;
+    height: 20px;
+    padding: 3px;
+    margin: 3px;
+    border-radius: 5px;
+  }
+  
+  .vacant{
+    background-color: #DD712B;
+  }
+  
+  .occupied{
+    background-color: #E0D1BA;
+    color: #1D757D;
+  }
