@@ -3,6 +3,7 @@
   height: 40px;
   border-radius: 5px;
   background-color: #1D757D;
+  cursor: pointer;
 }
 
 .textButton {
