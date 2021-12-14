@@ -1,11 +1,11 @@
 import './Seat.css'
 
-const Seat = ({isOccupied, until}) => {
-  const className=isOccupied?'seat seat-occupied':'seat seat-vacant';
-  const time=isOccupied?until:'';
+const Seat = ({isOccupied, endTime}) => {
+  const styleVariant=isOccupied?'seat seat-occupied':'seat seat-vacant';
+  const time=isOccupied?endTime:'';
 
   return (
-    <div className={className}>
+    <div className={styleVariant}>
       <span>
           {time}
         </span>
