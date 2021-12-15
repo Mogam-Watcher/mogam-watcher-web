@@ -1,8 +1,7 @@
-import './TextButton.css'
+import './TextButton.css';
 
-const TextButton = ({isSubmit, title, clickEvent}) => {
-  const styleVariant = `button textButton`;
-  const buttonType = isSubmit ? "submit" : "button";
+const TextButton = ({buttonType, title, clickEvent}) => {
+  const styleVariant = 'textButton';
 
   return (
     <button type={buttonType} className={styleVariant} onClick={clickEvent}>
