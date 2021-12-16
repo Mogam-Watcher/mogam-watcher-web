@@ -1,0 +1,23 @@
+.availableSeats,
+.bookedSeats {
+  text-align: left;
+  background-color: transparent;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.status,
+.seatsNumber {
+  font-size: 2em;
+  padding: 1%;
+  width: 12%;
+}
+
+.availableSeats {
+  color: #dd712b;
+}
+
+.bookedSeats {
+  color: #1d757d;
+}
