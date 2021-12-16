@@ -1,10 +1,10 @@
-import React from "react";
-import "./IconButton.css";
+import React from 'react';
+import './IconButton.css';
 
-const IconButton = ({ imageURL, altContent, onClickToDo, iconClassName }) => {
+const IconButton = ({imageURL, altContent, clickEvent}) => {
   return (
-    <button type="iconButton" onClick={onClickToDo} className="icon-button">
-      <img alt={altContent} src={imageURL} className={iconClassName} />
+    <button type="button" onClick={clickEvent} className="icon-button">
+      <img alt={altContent} src={imageURL} />
     </button>
   )
 }
