@@ -1,68 +1,98 @@
 .seatMap-container {
-  display: grid;
-  grid-template-columns: repeat(3, 70px);
-  grid-template-rows: repeat(4, 70px);
-  grid-gap: 30px;
-  justify-content: center;
+  display: flex;
+  margin: 0 auto;
+  width: 300px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
+
 /*PC, Tablet 가로모드까지*/
-@media (min-width: 900px) {
+@media only screen and (min-width: 900px) {
   .seatMap-container {
     display: grid;
-    grid-template-columns: repeat(11, 60px);
-    grid-template-rows: repeat(4, 60px);
+    width: 100%;
+    grid-template-columns: repeat(11, 70px);
+    grid-template-rows: repeat(4, 70px);
+    grid-gap: 30px;
     justify-content: center;
   }
-
   #seat0{
+    margin: 0;
     grid-column: 6 / 8;
     grid-row: 4 / 5;
   }
   #seat1{
+    margin: 0;
     grid-column: 2 / 4;
     grid-row: 4 / 5;
   }
   #seat2{
+    margin: 0;
     grid-column: 1 / 2;
-    grid-row: 3/ 5;
+    grid-row: 3 / 5;
     writing-mode: vertical-rl;
   }
   #seat3{
+    margin: 0;
     grid-column: 1 / 2;
     grid-row: 1 / 3;
     writing-mode: vertical-rl;
   }
   #seat4{
+    margin: 0;
     grid-column: 2 / 4;
     grid-row: 1 / 2;
   }
   #seat5{
+    margin: 0;
     grid-column: 4 / 6;
     grid-row: 1 / 2;
   }
   #seat-6{
+    margin: 0;
     grid-column: 6 / 8;
     grid-row: 1 / 2;
   }
   #seat-7{
+    margin: 0;
     grid-column: 8 / 10;
     grid-row: 1 / 2;
   }
   #seat-8{
+    margin: 0;
     grid-column: 10 / 12;
     grid-row: 1 / 2;
   }
   #seat-9{
+    margin: 0;
     grid-column: 11 / 12;
     grid-row: 2 / 4;
     writing-mode: vertical-rl;
   }
   #seat-10{
+    margin: 0;
     grid-column: 10 / 12;
     grid-row: 4 / 5;
   }
   #seat-11{
+    margin: 0;
     grid-column: 8 / 10;
     grid-row: 4 / 5;
   }
 }
+
+/*
+@media all and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .seatMap-container {
+    display: flex;
+    width: 300px;
+    flex-direction: row;
+    flex-wrap: wrap; 이 값도 IE에서는 적용안됨
+  }
+  .seatMap-item {
+    max-width: 70px;
+    max-height: 70px;
+  }
+}
+*/
