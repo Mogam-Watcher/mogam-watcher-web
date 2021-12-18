@@ -8,8 +8,7 @@ const Seat = ({seatNumber, isOccupied, seatInfo, clickEvent}) => {
   const info = isOccupied ? seatInfo : '';
 
   return (
-    <button 
-     type='button' className={seatStyleVariant} onClick={event}>
+    <button type='button' className={seatStyleVariant} onClick={event}>
       <div className={seatNumberStyleVariant}>
         {seatNumber}
       </div>
