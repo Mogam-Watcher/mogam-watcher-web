@@ -1,6 +1,7 @@
 .seat {
   border: none;
   border-radius: 5px;
+  cursor: pointer;
   height: inherit;
   margin: 10px;
   padding: 3px;
@@ -9,7 +10,7 @@
 
 .seat-vacant {
   background-color: #DD712B;
-  cursor: pointer;
+  box-shadow: 3px 3px 3px #D6CAB0;
 }
 
 .seat-occupied {
