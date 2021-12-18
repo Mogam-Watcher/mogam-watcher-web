@@ -1,16 +1,40 @@
-.seat{
-    width: 50px;
-    height: 20px;
-    padding: 3px;
-    margin: 3px;
-    border-radius: 5px;
-  }
-  
-  .seat-vacant{
-    background-color: #DD712B;
-  }
-  
-  .seat-occupied{
-    background-color: #E0D1BA;
-    color: #1D757D;
-  }
+.seat {
+  border: none;
+  border-radius: 5px;
+  height: inherit;
+  margin: 10px;
+  padding: 3px;
+  width: inherit;
+}
+
+.seat-vacant {
+  background-color: #DD712B;
+  cursor: pointer;
+}
+
+.seat-occupied {
+  background-color: #E0D1BA;
+}
+
+.seat-number {
+  font-size: 1em;
+  height: 30%;
+  text-align: left;
+}
+
+.seat-number-vacant {
+  color: #E0D1BA;
+  pointer-events: none;
+}
+
+.seat-number-occupied {
+  color: #DD712B;
+}
+
+.seat-info {
+  color: #1D757D;
+  font-size: 2em;
+  font-weight: bold;
+  height: 70%;
+  text-align: center;
+}

@@ -1,15 +1,22 @@
 import './Seat.css'
 
-const Seat = ({isOccupied, endTime}) => {
-  const styleVariant = isOccupied ? 'seat seat-occupied' : 'seat seat-vacant';
-  const time = isOccupied ? endTime : '';
+const Seat = ({seatNumber, isOccupied, endTime, clickEvent}) => {
+  const seatStyleVariant = isOccupied ? 'seat seat-occupied' : 'seat seat-vacant';
+  const seatNumberStyleVariant = isOccupied ? 'seat-number seat-number-occupied' : 'seat-number seat-number-vacant';
+  const voidFunction = () => {};
+  const event = isOccupied ? voidFunction : clickEvent;
+  const info = isOccupied ? endTime : '';
 
   return (
-    <div className={styleVariant}>
-      <span>
-          {time}
-        </span>
-    </div>
+    <button 
+     type='button' className={seatStyleVariant} onClick={event}>
+      <div className={seatNumberStyleVariant}>
+        {seatNumber}
+      </div>
+      <div className='seat-info'>
+        {info}
+      </div>
+    </button>
   );
 }
 
