@@ -5,11 +5,11 @@
   align-items: center;
 }
 
-.vacant {
+.currentSeatDisplay--vacant {
   color: #dd712b;
 }
 
-.occupied {
+.currentSeatDisplay--occupied {
   color: #1d757d;
 }
 
