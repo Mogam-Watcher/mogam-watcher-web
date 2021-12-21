@@ -1,11 +1,11 @@
 .seat {
   border: none;
-  border-radius: 5px;
+  border-radius: 10px;
   cursor: pointer;
-  height: inherit;
   margin: 10px;
+  min-height: 80px;
+  min-width: 80px;
   padding: 3px;
-  width: inherit;
 }
 
 .seat-vacant {
@@ -20,6 +20,7 @@
 .seat-number {
   font-size: 1em;
   height: 30%;
+  padding: 3px;
   text-align: left;
 }
 
