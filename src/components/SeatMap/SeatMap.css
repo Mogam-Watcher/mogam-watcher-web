@@ -1,98 +1,83 @@
 .seatMap-container {
   display: flex;
   margin: 0 auto;
-  width: 300px;
+  width: 375px;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-evenly;
 }
 
-/*PC, Tablet 가로모드까지*/
 @media only screen and (min-width: 900px) {
   .seatMap-container {
     display: grid;
     width: 100%;
-    grid-template-columns: repeat(11, 70px);
-    grid-template-rows: repeat(4, 70px);
-    grid-gap: 30px;
+    grid-template-columns: repeat(30, 10px);
+    grid-template-rows: repeat(11, 10px);
+    grid-gap: 25px;
     justify-content: center;
   }
+
   #seat0{
     margin: 0;
-    grid-column: 6 / 8;
-    grid-row: 4 / 5;
+    grid-column: 10 / 15;
+    grid-row: 9 / 12;
   }
   #seat1{
     margin: 0;
-    grid-column: 2 / 4;
-    grid-row: 4 / 5;
+    grid-column: 5 / 10;
+    grid-row: 9 / 12;
   }
   #seat2{
     margin: 0;
-    grid-column: 1 / 2;
-    grid-row: 3 / 5;
-    writing-mode: vertical-rl;
+    grid-column: 1 / 6;
+    grid-row: 8 / 11;
+    transform: rotate(-90deg);
   }
   #seat3{
     margin: 0;
-    grid-column: 1 / 2;
-    grid-row: 1 / 3;
-    writing-mode: vertical-rl;
+    grid-column: 1 / 6;
+    grid-row: 2 / 5;
+    transform: rotate(-90deg);
   }
   #seat4{
     margin: 0;
-    grid-column: 2 / 4;
-    grid-row: 1 / 2;
+    grid-column: 5 / 10;
+    grid-row: 1 / 4;
   }
   #seat5{
     margin: 0;
-    grid-column: 4 / 6;
-    grid-row: 1 / 2;
+    grid-column: 10 / 15;
+    grid-row: 1 / 4;
   }
-  #seat-6{
+  #seat6{
     margin: 0;
-    grid-column: 6 / 8;
-    grid-row: 1 / 2;
+    grid-column: 15 / 20;
+    grid-row: 1 / 4;
   }
-  #seat-7{
+  #seat7{
     margin: 0;
-    grid-column: 8 / 10;
-    grid-row: 1 / 2;
+    grid-column: 20 / 25;
+    grid-row: 1 / 4;
   }
-  #seat-8{
+  #seat8{
     margin: 0;
-    grid-column: 10 / 12;
-    grid-row: 1 / 2;
+    grid-column: 25 / 30;
+    grid-row: 1 / 4;
   }
-  #seat-9{
+  #seat9{
     margin: 0;
-    grid-column: 11 / 12;
-    grid-row: 2 / 4;
-    writing-mode: vertical-rl;
+    grid-column: 26 / 31;
+    grid-row: 5 / 8;
+    transform: rotate(90deg);
   }
-  #seat-10{
+  #seat10{
     margin: 0;
-    grid-column: 10 / 12;
-    grid-row: 4 / 5;
+    grid-column: 20 / 25;
+    grid-row: 9 / 12;
   }
-  #seat-11{
+  #seat11{
     margin: 0;
-    grid-column: 8 / 10;
-    grid-row: 4 / 5;
+    grid-column: 25 / 30;
+    grid-row: 9 / 12;
   }
 }
-
-/*
-@media all and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .seatMap-container {
-    display: flex;
-    width: 300px;
-    flex-direction: row;
-    flex-wrap: wrap; 이 값도 IE에서는 적용안됨
-  }
-  .seatMap-item {
-    max-width: 70px;
-    max-height: 70px;
-  }
-}
-*/
