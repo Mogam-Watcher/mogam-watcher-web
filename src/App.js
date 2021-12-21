@@ -1,14 +1,10 @@
+import React from 'react';
 import './App.css';
-import SeatMap from './components/SeatMap/SeatMap';
 
-function App() {
-  const event = () => {
-    alert("Sherlock, did you miss me?");
-  };
-
+const App = () => {
   return (
     <div className="App">
-      <SeatMap />
+      <h1>Mogam watcher application</h1>
     </div>
   );
 }
