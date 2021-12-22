@@ -7,7 +7,7 @@ const CurrentSeatDisplay = ({isOccupied, seatsNumber}) => {
   const seatsType = isOccupied ? 'vacant' : 'occupied';
 
   return(
-    <div className= {'currentSeatDisplay '+ 'currentSeatDisplay--'+seatsType}>
+    <div className= {`currentSeatDisplay currentSeatDisplay--${seatsType}`}>
       <span className='status'>
         {status}
       </span>
