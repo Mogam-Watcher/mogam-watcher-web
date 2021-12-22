@@ -1,17 +1,7 @@
-
-import loader from './util/GoogleSpreadsheetLoader'
-const table0 = {
-    tableRange:"C6:D6",
-    dataToUpdate: ["마마마","12:00"]
-  }
+import loader from '../../util/GoogleSpreadsheetLoader.js'
 
 class MogamWatcherModel {
-  
-  getTableData(){
-    const data = loader.getSpreadsheetData(table0);
-    console.log(data);
-  }
-
+  /**MogamWatcherModel will be implemented */
 }
 
 export default MogamWatcherModel;
