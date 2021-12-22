@@ -1,0 +1,23 @@
+.form {
+  align-items: center;
+  background-color: transparent;
+  display: flex;
+  font-size: 1em;
+  height: 40px;
+  margin: 3px;
+  padding: 3px;
+}
+  
+.form-label {
+  color: #DD712B;
+  text-align: left;
+  width: 30%;
+}
+
+.form-block {
+  border-radius: 5px;
+  border-style: solid;
+  border-width: 1px;
+  height: 100%;
+  width: 70%;
+}
