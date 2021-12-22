@@ -1,0 +1,21 @@
+.currentSeatDisplay {
+  background-color: transparent;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.currentSeatDisplay--vacant {
+  color: #dd712b;
+}
+
+.currentSeatDisplay--occupied {
+  color: #1d757d;
+}
+
+.status,
+.seatsNumber {
+  font-size: 1em;
+  margin: 10px;
+  width: 80px;
+}
