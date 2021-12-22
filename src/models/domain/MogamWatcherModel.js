@@ -12,7 +12,6 @@ class MogamWatcherModel {
     console.log(data);
   }
 
-
 }
 
 export default MogamWatcherModel;
