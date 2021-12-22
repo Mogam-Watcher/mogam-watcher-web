@@ -1,44 +1,29 @@
-const {google} = require( "googleapis" );
+import {google} from 'googleapis';
 
 const auth = new google.auth.GoogleAuth({
-  keyFile: "credentials.json",
+  keyFile: "../../util/credentials.json",
   scopes: "https://www.googleapis.com/auth/spreadsheets"
 });
 
-const spreadsheetId = "1WZA7BAh1WESgTuWmFDI9lSR92Ub87gur2ct-a1YqB3c"
-/*
-The input dataset must be like these.  
-const table0 = {
-  tableRange:"C6:D6",
-  dataToUpdate: ["마마마","12:00"]
-}
-const table1 = {
-  tableRange:"C8:D8",
-  dataToUpdate: ["헤이마마","14:00"]
-}
-Usage
-getSpreadsheetData(table1);
-updateSpreadsheetData(table0);
-deleteSpreadsheetData(table0);
-*/
+const spreadsheetId = "<SPREADSHEET-ID>"
 
-async function getSpreadsheetData(data) {
+async function getSpreadsheetData(tableRange) {
   
   const client = await auth.getClient();
   
   const googleSheets = google.sheets({version: "v4", auth: client});
   
-  const metaData = await googleSheets.spreadsheets.values.get({
+  const dataFromSheet = await googleSheets.spreadsheets.values.get({
     auth,
     spreadsheetId,
-    range : `시트1!${data.tableRange}`
-  })
+    range : `<SHEET NAME>!${tableRange}`
+  });
   
-  console.log(metaData.data);
-  return metaData.data;
+  return dataFromSheet.data;
 }
 
 async function updateSpreadsheetData(data){
+  
   const client = await auth.getClient();
   
   const googleSheets = google.sheets({version: "v4", auth: client});
@@ -46,7 +31,7 @@ async function updateSpreadsheetData(data){
   await googleSheets.spreadsheets.values.update({
     auth,
     spreadsheetId,
-    range : `시트1!${data.tableRange}`,
+    range : `<SHEET NAME>!${data.tableRange}`,
     valueInputOption:'USER_ENTERED',
     resource:{
       values:[
@@ -57,6 +42,7 @@ async function updateSpreadsheetData(data){
 }
 
 async function deleteSpreadsheetData(data){
+  
   const client = await auth.getClient();
   
   const googleSheets = google.sheets({version: "v4", auth: client});
@@ -64,9 +50,8 @@ async function deleteSpreadsheetData(data){
   await googleSheets.spreadsheets.values.clear({
     auth,
     spreadsheetId,
-    range : `시트1!${data.tableRange}`,
+    range : `<SHEET NAME>!${data.tableRange}`,
   })
 }
 
-module.exports = {getSpreadsheetData, updateSpreadsheetData, deleteSpreadsheetData};
-
+export default {getSpreadsheetData, updateSpreadsheetData, deleteSpreadsheetData};
