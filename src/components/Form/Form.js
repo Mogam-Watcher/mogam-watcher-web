@@ -11,7 +11,7 @@ const Form = ({identification, title, type, dataSet, formHint, formValue}) => {
 
   const optionData = (data) => {
       return (
-        <option className='form-block-seletor' key={data.key} value={data.contents}>
+        <option key={data.key} value={data.contents}>
           {data.contents}
         </option>
       )
