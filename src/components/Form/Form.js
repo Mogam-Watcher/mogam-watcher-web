@@ -25,7 +25,7 @@ const Form = ({identification, title, type, dataSet, formHint, formValue}) => {
             id={identification}
             value={value}
             onChange={handleChange}
-            className='form-block form-block-arrow selectNative js-selectNative'
+            className='form-block form-block-arrow'
           >
             <option key='0' value='default' disabled hidden>
               {formHint}
