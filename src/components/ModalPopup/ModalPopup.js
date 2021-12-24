@@ -6,14 +6,14 @@ const ModalPopup = ({ isShowing, hide, children }) => {
   const modalContainer = isShowing && (
       <div className="modal-background">
         <div className="modal-wrapper" aria-modal aria-hidden role="dialog" >
-          <div className="modal">
-            <section className="modal-header">
+          <section className="modal">
+            <header className="modal-header">
               <button className="modal-closeButton" type="button" onClick={hide}>
                 &times;
               </button>
-            </section>
+            </header>
             {children}
-            </div>
+            </section>
           </div>
       </div>
   );
