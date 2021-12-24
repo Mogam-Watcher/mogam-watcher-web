@@ -7,14 +7,14 @@ const ModalPopup = ({ isShowing, hide, children }) => {
       <div className="modal-background">
         <div className="modal-wrapper" aria-modal aria-hidden role="dialog" >
           <div className="modal">
-            <div className="modal-header">
-              <button className="modal-close-button" type="button" onClick={hide}>
-                <span>&times;</span>
+            <section className="modal-header">
+              <button className="modal-closeButton" type="button" onClick={hide}>
+                &times;
               </button>
-            </div>
+            </section>
             {children}
+            </div>
           </div>
-        </div>
       </div>
   );
   return (
