@@ -3,14 +3,30 @@
   border-radius: 10px;
   cursor: pointer;
   margin: 10px;
-  min-height: 80px;
-  min-width: 80px;
   padding: 3px;
+  height: 80px;
+  flex-basis: 80px;
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+@media only screen and (min-width: 600px) {
+  .seat {
+    min-height: 100px;
+    min-width: 100px;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  .seat {
+    min-height: 80px;
+    min-width: 80px;
+  }
 }
 
 .seat-vacant {
   background-color: #DD712B;
-  box-shadow: 3px 3px 3px #D6CAB0;
+  box-shadow: 3px 3px 3px 1px #D6CAB0;
 }
 
 .seat-occupied {

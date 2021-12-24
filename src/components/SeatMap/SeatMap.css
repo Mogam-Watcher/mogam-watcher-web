@@ -1,20 +1,29 @@
 .seatMap-container {
   display: flex;
-  margin: 0 auto;
-  width: 375px;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
+  flex-flow: row wrap;
+  -ms-flex-flow: row wrap;
+  justify-content: space-between;
+  margin-top: 40px;
 }
 
-@media only screen and (min-width: 900px) {
+@media only screen and (min-width: 600px) {
+  .seatMap-container {
+    display: flex;
+    flex-flow: row wrap;
+    -ms-flex-flow: row wrap;
+    justify-content: space-between;
+    margin-top: 60px;
+  }
+} 
+
+@media only screen and (min-width: 1000px) {
   .seatMap-container {
     display: grid;
-    width: 100%;
     grid-template-columns: repeat(30, 10px);
     grid-template-rows: repeat(11, 10px);
     grid-gap: 25px;
     justify-content: center;
+    margin-top: 100px;
   }
 
   #seat0{
