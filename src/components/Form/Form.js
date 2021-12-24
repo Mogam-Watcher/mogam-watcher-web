@@ -25,7 +25,7 @@ const Form = ({identification, title, type, dataSet, formHint, formValue}) => {
             id={identification}
             value={value}
             onChange={handleChange}
-            className='form form-block'
+            className='form-block form-block-arrow selectNative js-selectNative'
           >
             <option key='0' value='default' disabled hidden>
               {formHint}
@@ -36,7 +36,7 @@ const Form = ({identification, title, type, dataSet, formHint, formValue}) => {
       case 'text':
         return (
           <input 
-            className='form form-block'
+            className='form-block'
             id={identification} 
             type={type}
             name={title} 
