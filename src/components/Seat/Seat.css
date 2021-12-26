@@ -1,0 +1,42 @@
+.seat {
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin: 10px;
+  min-height: 80px;
+  min-width: 80px;
+  padding: 3px;
+}
+
+.seat-vacant {
+  background-color: #DD712B;
+  box-shadow: 3px 3px 3px #D6CAB0;
+}
+
+.seat-occupied {
+  background-color: #E0D1BA;
+}
+
+.seat-number {
+  font-size: 1em;
+  height: 30%;
+  padding: 3px;
+  text-align: left;
+}
+
+.seat-number-vacant {
+  color: #E0D1BA;
+  pointer-events: none;
+}
+
+.seat-number-occupied {
+  color: #DD712B;
+}
+
+.seat-info {
+  color: #1D757D;
+  font-size: 2em;
+  font-weight: bold;
+  height: 70%;
+  text-align: center;
+}
