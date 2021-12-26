@@ -1,3 +1,4 @@
+// TODO : remove
 const testDataSet = {
   range: "'시트1'!C6:D29",
   majorDimension: 'ROWS',
@@ -65,9 +66,9 @@ function seatsInit(totalSeat, seats) {
     let tableRange = getTableRange(i);
     if(isOccupied){
       data = sheetPaser(data);
-      seats[i] = { number: i, userName: data[0], endTime: data[1], isOccupied: isOccupied, tableRange: tableRange};
+      seats[i] = { seatNumber: i, userName: data[0], endTime: data[1], isOccupied: isOccupied, tableRange: tableRange};
     } else {
-      seats[i] = { number: i, userName: '', endTime: '', isOccupied: isOccupied, tableRange: tableRange};
+      seats[i] = { seatNumber: i, userName: '', endTime: '', isOccupied: isOccupied, tableRange: tableRange};
     }
   }
 }
