@@ -1,3 +1,4 @@
+import React from 'react';
 import './TextButton.css';
 
 const TextButton = ({buttonType, title, clickEvent}) => {
