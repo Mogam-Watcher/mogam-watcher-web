@@ -22,7 +22,7 @@ const SeatMap = () => {
   return (
     <div className="seatMap-container">
     {testSeatArray.map(seat => 
-        <Seat key={seat.seatNumber} seatId={"seat"+seat.seatNumber} seatNumber={seat.seatNumber} isOccupied={seat.isOccupied} seatInfo={seat.endTime} />
+        <Seat key={seat.seatNumber} seatId={`seat${seat.seatNumber}`} seatNumber={seat.seatNumber} isOccupied={seat.isOccupied} seatInfo={seat.endTime} />
       )}
     </div>
     )
