@@ -74,6 +74,8 @@ async function getSpreadsheetData(number) {
     
     return dataFromSheet.data;
   }
+
+  
 }
 
 async function updateSpreadsheetData(number, data) {
@@ -111,5 +113,10 @@ async function deleteSpreadsheetData(number) {
     })
   }
 }
+
+const get = getSpreadsheetData(5);
+get.then((e)=>{
+ console.log(e);
+})
 
 export default {getSpreadsheetData, updateSpreadsheetData, deleteSpreadsheetData};

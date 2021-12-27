@@ -1,5 +1,11 @@
 const path = require('path');
 
+const dotenv = require('dotenv')
+dotenv.config();
+
+const webpack = require('webpack');
+
+
 module.exports = {
   entry: path.resolve(__dirname, './src/index.js'),
   module: {
@@ -24,7 +30,7 @@ module.exports = {
     ],
   },
   resolve: {
-    extensions: ['*', '.js', '.jsx'],
+    extensions: ['*', '.js', '.jsx']
   },
   output: {
     path: path.resolve(__dirname, './public'),
@@ -34,5 +40,12 @@ module.exports = {
     static: path.resolve(__dirname, './public'),
     hot: 'only',
   },
+  plugins: [
+    new webpack.DefinePlugin({
+      'process.env.CREDENTIAL_PATH': JSON.stringify(process.env.CREDENTIAL_PATH),
+      'process.env.SPREADSHEET_ID': JSON.stringify(process.env.SPREADSHEET_ID),
+    }),
+    new webpack.EnvironmentPlugin(['CREDENTIAL_PATH', 'SPREADSHEET_ID']),
+  ]
 };
 
