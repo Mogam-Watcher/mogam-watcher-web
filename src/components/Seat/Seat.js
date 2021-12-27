@@ -1,3 +1,4 @@
+import React from "react";
 import './Seat.css'
 
 const Seat = ({seatId, seatNumber, isOccupied, seatInfo, clickEvent}) => {
