@@ -3,13 +3,12 @@ import CurrentSeatDisplay from '../../components/CurrentSeatDisplay/CurrentSeatD
 import SeatMap from '../../components/SeatMap/SeatMap';
 import './SeatDisplay.css';
 
-const SeatDisplay = () => {
+const SeatDisplay = ({seatArray, totalSeat, countVacantSeat}) => {
   return (
-    <div className="seatDisplay-container">
-      {/*TODO seatsNumber value*/}
-      <CurrentSeatDisplay isOccupied={false} seatsNumber='5' />
-      <CurrentSeatDisplay isOccupied={true} seatsNumber='7' />
-      <SeatMap />
+    <div class="seatDisplay-container">
+      <CurrentSeatDisplay isOccupied={false} seatsNumber={totalSeat - countVacantSeat} />
+      <CurrentSeatDisplay isOccupied={true} seatsNumber={countVacantSeat} />
+      <SeatMap seatArray={seatArray} />
     </div>
   );
 }
