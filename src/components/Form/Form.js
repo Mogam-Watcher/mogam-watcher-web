@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Form.css'
 
-const Form = ({identification, title, type, dataSet, formHint, formValue}) => {
+const Form = ({identification, title, type, dataSet, formHint, formValue, isDisabled}) => {
   const defaultValue = (type==='select') ? 'default' : formValue;
   const [value, setValue] = useState(defaultValue);
 
@@ -26,6 +26,7 @@ const Form = ({identification, title, type, dataSet, formHint, formValue}) => {
             value={value}
             onChange={handleChange}
             className='form-block form-block-arrow'
+            disabled={isDisabled}
           >
             <option key='0' value='default' disabled hidden>
               {formHint}
@@ -43,6 +44,7 @@ const Form = ({identification, title, type, dataSet, formHint, formValue}) => {
             placeholder={formHint}
             value={value}
             onChange={handleChange}
+            disabled={isDisabled}
           />
         );
     }
