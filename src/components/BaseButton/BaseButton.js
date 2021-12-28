@@ -1,8 +1,8 @@
 import React from 'react';
-import './TextButton.css';
+import './BaseButton.css';
 
-const TextButton = ({buttonType, title, clickEvent}) => {
-  const styleVariant = 'textButton';
+const BaseButton = ({buttonType, title, clickEvent}) => {
+  const styleVariant = 'baseButton';
 
   return (
     <button type={buttonType} className={styleVariant} onClick={clickEvent}>
@@ -11,4 +11,4 @@ const TextButton = ({buttonType, title, clickEvent}) => {
   );
 }
 
-export default TextButton;
+export default BaseButton;

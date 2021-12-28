@@ -1,6 +1,6 @@
 import React from "react";
 import Form from '../../components/Form/Form';
-import TextButton from '../../components/TextButton/TextButton';
+import BaseButton from '../../components/BaseButton/BaseButton';
 import './RegistrationForm.css';
 
 const RegistrationForm = () => {
@@ -15,7 +15,7 @@ const RegistrationForm = () => {
       <span className="checkInModal-item" id="checkInModal-title">좌석번호 7</span>
       <div className="checkInModal-item"><Form identification='' title='이름' type='text' formHint='이름' /></div>
       <div className="checkInModal-item"><Form identification='' title='퇴실시간' type='select' formHint='예상퇴실시간' dataSet={set} /></div>
-      <div className="checkInModal-item"><TextButton buttonType="submit" title="Check In" clickEvent="#" /></div>
+      <div className="checkInModal-item"><BaseButton buttonType="submit" title="Check In" clickEvent="#" /></div>
     </div>
   );
 };
