@@ -1,0 +1,40 @@
+:root {
+  --form-fontSize: 1.5em;
+}
+
+.form {
+  align-items: center;
+  background-color: transparent;
+  display: flex;
+  height: 90px;
+  margin: 3px;
+  padding: 3px;
+  font-size: var(--form-fontSize);
+}
+  
+.form-label {
+  color: #DD712B;
+  text-align: left;
+  width: 30%;
+  font-size: var(--form-fontSize);
+}
+
+.form-block {
+  border-radius: 10px;
+  border-style: solid;
+  border-width: 2px;
+  height: 100%;
+  width: 70%;
+  box-sizing: border-box;
+  font-size: var(--form-fontSize);
+
+}
+.form-block-arrow {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: transparent;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='50' viewBox='0 0 24 24' width='50' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+  background-repeat: no-repeat;
+  background-position-x: 100%;
+  background-position-y: 50%;
+}
