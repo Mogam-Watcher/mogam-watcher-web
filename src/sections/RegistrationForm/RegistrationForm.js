@@ -4,11 +4,16 @@ import BaseButton from '../../components/BaseButton/BaseButton';
 import './RegistrationForm.css';
 
 const RegistrationForm = ({seatNumber}) => {
-  const set = [{key:1, contents:"12:00"}, 
-               {key:2, contents:"13:00"}, 
-               {key:3, contents:"14:00"}, 
-               {key:4, contents:"15:00"}, 
-               {key:5, contents:"16:00"}];
+  function getEndTimeSet() {
+    const currentTime = new Date().getHours();
+    const maxEndTime = 24;
+    const endTimeSet = [];
+    for(var i = 0; i < maxEndTime - currentTime; i++){
+      endTimeSet[i] = {key: i + 1, contents: `${currentTime + i + 1}:00`};
+    }
+    return endTimeSet;
+  }
+  
   return (
     <div className="checkInModal-container">
       <span className="checkInModal-item" id="checkInModal-title">
@@ -29,7 +34,7 @@ const RegistrationForm = ({seatNumber}) => {
          title='퇴실시간' 
          type='select' 
          formHint='예상퇴실시간' 
-         dataSet={set} 
+         dataSet={getEndTimeSet()} 
          isDisabled={false} 
         />
       </div>
