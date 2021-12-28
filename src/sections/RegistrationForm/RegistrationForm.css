@@ -1,0 +1,43 @@
+:root {
+  --title-fontSize-sm: 1.5em;
+  --title-fontSize-md: 2em;
+}
+
+/* mobile */
+.checkInModal-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  width: 80%;
+  margin: 0 auto;
+  padding-top: 30px;
+}
+.checkInModal-item {
+  flex-basis: 70px;
+}
+#checkInModal-title {
+  font-size: var(--title-fontSize-sm);
+  font-weight: 700;
+  color: #1D757D;
+}
+.baseButton {
+  margin: 10px 0;
+  height: 40px;
+}
+
+/*  tablet */
+@media only screen and (min-width: 768px) {
+  .checkInModal-container {
+    width: 70%;
+  }
+  .checkoutModal-item {
+    flex-basis: 80px;
+  }  
+  #checkInModal-title {
+    font-size: var(--title-fontSize-md);
+  }
+}
+ /* PC */
+@media only screen and (min-width: 992px) {
+}

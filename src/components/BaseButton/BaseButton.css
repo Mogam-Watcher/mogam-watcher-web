@@ -1,0 +1,24 @@
+:root {
+  --button-fontSize-sm: 1.3em;
+  --button-fontSize-md: 1.8em;
+}
+/* mobile */
+.baseButton {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 3px 3px 5px rgba(128, 128, 128, 0.75);
+  background-color: #1D757D;
+  cursor: pointer;
+  color: white;
+  font-size: var(--button-fontSize-sm);
+  text-align: center;
+}
+
+/* Tablet, PC */
+@media only screen and (min-width: 768px) {
+  .baseButton {
+    font-size: var(--button-fontSize-md);
+  }
+}
