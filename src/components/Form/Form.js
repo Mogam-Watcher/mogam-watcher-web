@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './Form.css'
 
 const Form = ({identification, title, type, dataSet, formHint, formValue, isDisabled}) => {
-  const defaultValue = (type==='select') ? 'default' : formValue;
+  const defaultValue = (type==='select' && typeof formValue==='undefined') ? 'default' : formValue;
   const [value, setValue] = useState(defaultValue);
 
   const handleChange = (event) => {
