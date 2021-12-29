@@ -11,7 +11,6 @@ const Seat = ({seatId, seatNumber, isOccupied, seatInfo}) => {
   const seatNumberStyleVariant = isOccupied ? 'seat-number seat-number-occupied' : 'seat-number seat-number-vacant';
   const info = isOccupied ? seatInfo : '';
   const popup = () => {
-    /*TODO popup for isOccupied===true*/
     if(isOccupied) {
       return (
         <ExtensionCheckout seatNumber={seatNumber}></ExtensionCheckout>
