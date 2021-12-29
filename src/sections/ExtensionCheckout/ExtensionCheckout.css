@@ -1,0 +1,53 @@
+:root {
+  --title-fontSize-sm: 1.5em;
+  --title-fontSize-md: 2em;
+}
+
+/* mobile */
+.checkoutModal-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  width: 80%;
+  margin: 0 auto;
+}
+.checkoutModal-item {
+  flex-basis: 50px;
+}
+#checkoutModal-title {
+  font-size: var(--title-fontSize-sm);
+  font-weight: 700;
+  color: #1D757D;
+}
+.textButton {
+  margin: 10px 0;
+  height: 40px;
+}
+#extensionButton .textButton {
+  background-color: #DD712B;
+}
+.horizontalRules {
+  width: 100%;
+  margin: 20px 0;
+} 
+
+/*  tablet */
+@media only screen and (min-width: 768px) {
+  .checkoutModal-container {
+    width: 70%;
+  }
+  #checkoutModal-title {
+    font-size: var(--title-fontSize-md);
+  }
+  .checkoutModal-item {
+    flex-basis: 60px;
+  }  
+}
+
+ /* PC */
+@media only screen and (min-width: 992px) {
+  .horizontalRules {
+    margin: 35px 0;
+  } 
+}
