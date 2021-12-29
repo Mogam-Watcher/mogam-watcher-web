@@ -3,6 +3,7 @@ import './Seat.css';
 import useModal from '../../components/ModalPopup/useModal';
 import ModalPopup from '../../components/ModalPopup/ModalPopup';
 import RegistrationForm from '../../sections/RegistrationForm/RegistrationForm';
+import ExtensionCheckout from '../../sections/ExtensionCheckout/ExtensionCheckout';
 
 const Seat = ({seatId, seatNumber, isOccupied, seatInfo}) => {
   const {isShowing, toggle} = useModal();
@@ -13,9 +14,7 @@ const Seat = ({seatId, seatNumber, isOccupied, seatInfo}) => {
     /*TODO popup for isOccupied===true*/
     if(isOccupied) {
       return (
-        <p>
-          "TODO"
-        </p>
+        <ExtensionCheckout seatNumber={seatNumber}></ExtensionCheckout>
       );
     } else {
       return (
