@@ -35,14 +35,26 @@
     width: 30px;
     height: 30px;
   }
+  .notice-wrapper {
+    width: 90%;
+    margin: 0 auto;
+  }
   .notice-title {
-    height: 12%;
-    font-size: 1.5em;
+    
+    height: 10%;
+    font-size: 1em;
     color: #1d757d;
+    padding: 0 auto;
   }
   .notice-content {
     font-size: 0.8em;
+    padding-bottom: 10px;
     white-space: pre-wrap;
+    overflow-y: scroll;
+    scrollbar-width: none;
+  }
+  .notice-content::-webkit-scrollbar {
+    display: none;
   }
 @media only screen and (min-width: 768px) {
   .mogamLogo-wrapper {

@@ -18,7 +18,7 @@ const Header = ({noticeTitle, noticeContent}) => {
     <div className="infoIcon-wrapper">
     <IconButton imageURL={infoIcon} altContent="infoIcon" clickEvent={toggle} />
     <ModalPopup isShowing={isShowing} hide={toggle} >
-      <section>
+      <section className="notice-wrapper">
         <h1 className="notice-title">{noticeTitle}</h1>
         <p className="notice-content">
         {noticeContent}
