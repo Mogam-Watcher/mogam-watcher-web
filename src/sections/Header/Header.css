@@ -1,7 +1,8 @@
   .header-wrapper {
     width: 100%;
-    height: 14%;
-    background-color: #E0D1BA;
+    /* height: 14%; */
+    /* 삭제 */
+    /* background-color: #E0D1BA; */
     display: flex;
     align-items:flex-end;
     justify-content: space-between;
@@ -27,9 +28,10 @@
   }
   .infoIcon-wrapper {
     width: 15%;
-    height: 30%;
     display: flex;
     align-items: flex-end;
+    justify-content: end;
+    margin-right: 20px;
   }
   .infoIcon-wrapper img {
     width: 30px;
@@ -67,7 +69,8 @@
     font-size: 2em;
   }
   .infoIcon-wrapper {
-    height: 50%;
+    /* height: 50%; */
+    margin-right: 50px;
   }
   .infoIcon-wrapper img {
     width: 40px;
@@ -75,8 +78,20 @@
   }
 } 
 @media only screen and (min-width: 992px) {
+  .header-wrapper {
+    width: 970px;
+    margin: 0 auto;
+    padding-top: 30px;
+  }
   .mogamLogo-wrapper {
-    margin-left: 60px;
+    margin-left: 0;
+  }
+  .mogamLogo-wrapper {
+    height: 0;
+  }
+  .infoIcon-wrapper {
+    justify-content: end;
+    margin-right: 0;
   }
 }
 

@@ -28,6 +28,10 @@
 .modal-header {
   height: 5%;
 }
+.closeIcon-wrapper {
+  display: flex;
+  justify-content: end;
+}
 .closeIcon-wrapper img {
   width: 20px;
   height: 20px;
