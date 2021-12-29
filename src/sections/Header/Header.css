@@ -1,0 +1,93 @@
+  .header-wrapper {
+    width: 100%;
+    height: 14%;
+    background-color: #E0D1BA;
+    display: flex;
+    align-items:flex-end;
+    justify-content: space-between;
+    padding: 20px 0;
+  }
+  .mogamLogo-wrapper {
+    width: 40%;
+    display: flex;
+    align-items: flex-end;
+    margin-left: 20px;
+  }
+  .mogamLogo {
+    width: 60px;
+    height: 80px;
+  }
+  .mogamLogo-title {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #DD712B;
+    display: flex;
+    align-items: flex-end;
+    margin-left: 5px;
+  }
+  .infoIcon-wrapper {
+    width: 15%;
+    height: 30%;
+    display: flex;
+    align-items: flex-end;
+  }
+  .infoIcon-wrapper img {
+    width: 30px;
+    height: 30px;
+  }
+  .notice-wrapper {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .notice-title {
+    height: 10%;
+    font-size: 1em;
+    color: #1d757d;
+    padding: 0 auto;
+  }
+  .notice-content {
+    font-size: 0.8em;
+    padding-bottom: 10px;
+    white-space: pre-wrap;
+    overflow-y: scroll;
+    scrollbar-width: none;
+  }
+  .notice-content::-webkit-scrollbar {
+    display: none;
+  }
+@media only screen and (min-width: 768px) {
+  .mogamLogo-wrapper {
+    margin-left: 50px;
+  }
+  .mogamLogo {
+    width: 80px;
+    height: 100px;
+  }
+  .mogamLogo-title {
+    font-size: 2em;
+  }
+  .infoIcon-wrapper {
+    height: 50%;
+  }
+  .infoIcon-wrapper img {
+    width: 40px;
+    height: 40px;
+  }
+} 
+@media only screen and (min-width: 992px) {
+  .mogamLogo-wrapper {
+    margin-left: 60px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
