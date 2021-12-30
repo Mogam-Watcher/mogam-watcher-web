@@ -1,5 +1,5 @@
-import React, { useContext } from "react";
-import { SeatContext } from "../../App";
+import React, { useContext } from 'react';
+import { SeatContext } from '../../App';
 import CurrentSeatDisplay from '../../components/CurrentSeatDisplay/CurrentSeatDisplay';
 import SeatMap from '../../components/SeatMap/SeatMap';
 import './SeatDisplay.css';

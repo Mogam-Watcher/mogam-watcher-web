@@ -1,9 +1,9 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState } from 'react';
 import Form from '../../components/Form/Form';
 import BaseButton from '../../components/BaseButton/BaseButton';
 import './RegistrationForm.css';
-import { SeatContext } from "../../App";
-import { seatUpdate } from "../../models/Seats";
+import { SeatContext } from '../../App';
+import { seatUpdate } from '../../models/Seats';
 
 const RegistrationForm = ({seatNumber}) => {
   const [userName, setUserName] = useState();

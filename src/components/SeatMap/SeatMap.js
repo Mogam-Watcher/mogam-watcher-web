@@ -1,6 +1,6 @@
-import React from "react";
-import "./SeatMap.css";
-import Seat from "../Seat/Seat"
+import React from 'react';
+import './SeatMap.css';
+import Seat from '../Seat/Seat'
 
 const SeatMap = ({seatArray}) => {
   return (

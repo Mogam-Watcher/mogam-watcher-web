@@ -1,9 +1,9 @@
-import React,{ useContext, useState } from "react";
+import React,{ useContext, useState } from 'react';
 import Form from '../../components/Form/Form';
 import BaseButton from '../../components/BaseButton/BaseButton';
 import './ExtensionCheckout.css';
-import { SeatContext } from "../../App";
-import { seatDelete, seatUpdate } from "../../models/Seats";
+import { SeatContext } from '../../App';
+import { seatDelete, seatUpdate } from '../../models/Seats';
 
 const ExtensionCheckout = ({seatNumber}) => {
   const [endTime, setEndTime] = useState();
