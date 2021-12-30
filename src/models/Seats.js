@@ -22,14 +22,23 @@ class Seats {
   constructor(totalSeat) {
     this.totalSeat = totalSeat;
     this.countVacantSeat = totalSeat;
-    this.seats = new Array();
-    seatsInit(totalSeat, this.seats);
+    this.seatArray = new Array();
+    seatsInit(totalSeat, this.seatArray);
     countVacantSeat(this);
+  }
+  decreaseVacantSeat() {
+    this.countVacantSeat--;
+  }
+  increaseVacantSeat() {
+    this.countVacantSeat++;
+  }
+  updateSeatArray(seatNumber, userName, endTime) {
+    this.seatArray[seatNumber] = { userName: userName, endTime: endTime, isOccupied: true }
   }
 }
 
 function countVacantSeat(Seats) {
-  for(let seat of Seats.seats){
+  for(let seat of Seats.seatArray){
     if(seat.isOccupied){
       Seats.countVacantSeat--;
     }
@@ -59,17 +68,36 @@ function getTableRange(seatNumber) {
   return `!C${index[seatNumber]}:D${index[seatNumber]}`;
 }
 
-function seatsInit(totalSeat, seats) {
+function seatsInit(totalSeat, seatArray) {
   for (let i = 0; i < totalSeat; i ++){
     let data = JSON.stringify(testDataSet.values[(i * 2)]);
     let isOccupied = isOccupiedSeat(data);
     let tableRange = getTableRange(i);
     if(isOccupied){
       data = sheetPaser(data);
-      seats[i] = { seatNumber: i, userName: data[0], endTime: data[1], isOccupied: isOccupied, tableRange: tableRange};
+      seatArray[i] = { seatNumber: i, userName: data[0], endTime: data[1], isOccupied: isOccupied, tableRange: tableRange };
     } else {
-      seats[i] = { seatNumber: i, userName: '', endTime: '', isOccupied: isOccupied, tableRange: tableRange};
+      seatArray[i] = { seatNumber: i, userName: '', endTime: '', isOccupied: isOccupied, tableRange: tableRange };
     }
   }
 }
+
+function seatUpdate(Seats, seatNumber, userName, endTime, isCheckin){
+  Seats.seatArray[seatNumber].userName = userName;
+  Seats.seatArray[seatNumber].endTime = endTime;
+  Seats.seatArray[seatNumber].isOccupied =  true;
+  if(isCheckin){
+    Seats.countVacantSeat--;
+  }
+  console.log(Seats);
+}
+
+function seatDelete(Seats, seatNumber){
+  Seats.seatArray[seatNumber].userName = '';
+  Seats.seatArray[seatNumber].endTime = '';
+  Seats.seatArray[seatNumber].isOccupied = false;
+  Seats.countVacantSeat++;
+  console.log(Seats);
+}
+export { seatUpdate, seatDelete };
 export default Seats;
