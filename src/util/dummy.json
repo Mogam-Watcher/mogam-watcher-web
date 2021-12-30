@@ -1,0 +1,71 @@
+{
+    "dummy": 
+    [
+        {
+            "tableNumber": 0,
+            "name": "agsdgsdgsdg",
+            "endTime": "11:00" 
+        },
+        {
+            "tableNumber": 1,
+            "name": "adfsdfsdf",
+            "endTime": "12:00" 
+        },
+        {
+            "tableNumber": 2,
+            "name": "",
+            "endTime": "" 
+        },
+        {
+            "tableNumber": 3,
+            "name": "",
+            "endTime": "" 
+        },
+        {
+            "tableNumber": 4,
+            "name": "",
+            "endTime": "" 
+        },
+        {
+            "tableNumber": 5,
+            "name": "",
+            "endTime": "" 
+        },
+        {
+            "tableNumber": 6,
+            "name": "",
+            "endTime": "" 
+        },
+        {
+            "tableNumber": 7,
+            "name": "",
+            "endTime": "" 
+        },
+        {
+            "tableNumber": 8,
+            "name": "",
+            "endTime": "" 
+        },
+        {
+            "tableNumber": 9,
+            "name": "",
+            "endTime": "" 
+        },
+        {
+            "tableNumber": 10,
+            "name": "",
+            "endTime": "" 
+        },
+        {
+            "tableNumber": 11,
+            "name": "",
+            "endTime": "" 
+        },
+        {
+            "tableNumber": 12,
+            "name": "",
+            "endTime": "" 
+        }
+    ]
+}
+
