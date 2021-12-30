@@ -89,7 +89,6 @@ function seatUpdate(Seats, seatNumber, userName, endTime, isCheckin){
   if(isCheckin){
     Seats.countVacantSeat--;
   }
-  console.log(Seats);
 }
 
 function seatDelete(Seats, seatNumber){
@@ -97,7 +96,6 @@ function seatDelete(Seats, seatNumber){
   Seats.seatArray[seatNumber].endTime = '';
   Seats.seatArray[seatNumber].isOccupied = false;
   Seats.countVacantSeat++;
-  console.log(Seats);
 }
 export { seatUpdate, seatDelete };
 export default Seats;
