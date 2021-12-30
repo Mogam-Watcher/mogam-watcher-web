@@ -1,11 +1,14 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Form from '../../components/Form/Form';
 import BaseButton from '../../components/BaseButton/BaseButton';
 import './RegistrationForm.css';
+import { SeatContext } from "../../App";
+import { seatUpdate } from "../../models/Seats";
 
 const RegistrationForm = ({seatNumber}) => {
   const [userName, setUserName] = useState();
   const [endTime, setEndTime] = useState();
+  const seats = useContext(SeatContext);
 
   function getEndTimeSet() {
     const currentTime = new Date().getHours();
@@ -18,12 +21,14 @@ const RegistrationForm = ({seatNumber}) => {
   }
   const checkIn = () => {
     const confirmMessage = `${userName}님 ${seatNumber}번 자리 ${endTime}까지 신청하시겠습니까?`
+    //TODO 유효성검사
     if(typeof userName === 'undefined'){
       alert('이름을 입력해주세요');
     } else if(typeof endTime === 'undefined'){
       alert('예상 퇴실시간을 입력해주세요');
     } else if(confirm(confirmMessage)){
-      seatArray[seatNumber] = {userName: userName, endTime: endTime, isOccupied: true}
+      //TODO 스프레드시트 업데이트
+      seatUpdate(seats, seatNumber, userName, endTime, true);
       alert(`${userName}님 ${seatNumber}번 자리 ${endTime}까지 신청되셨습니다.`)
     }
   }

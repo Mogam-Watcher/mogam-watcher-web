@@ -1,14 +1,43 @@
-import React from "react";
+import React,{ useContext, useState } from "react";
 import Form from '../../components/Form/Form';
 import BaseButton from '../../components/BaseButton/BaseButton';
 import './ExtensionCheckout.css';
+import { SeatContext } from "../../App";
+import { seatDelete, seatUpdate } from "../../models/Seats";
 
 const ExtensionCheckout = ({seatNumber}) => {
-  const set = [{key:1, contents:"12:00"}, 
-               {key:2, contents:"13:00"}, 
-               {key:3, contents:"14:00"}, 
-               {key:4, contents:"15:00"}, 
-               {key:5, contents:"16:00"}];
+  const [endTime, setEndTime] = useState();
+  const seats = useContext(SeatContext);
+  const userName = seats.seatArray[seatNumber].userName;
+
+  function getEndTimeSet() {
+    const currentTime = new Date().getHours();
+    const maxEndTime = 24;
+    const endTimeSet = [];
+    for(var i = 0; i < maxEndTime - currentTime; i++){
+      endTimeSet[i] = {key: i + 1, contents: `${currentTime + i + 1}:00`};
+    }
+    return endTimeSet;
+  }
+  const extension = () => {
+    const confirmMessage = `${userName}님 ${seatNumber}번 자리 ${endTime}까지 연장하시겠습니까?`
+    //TODO 유효성검사
+    if(typeof endTime === 'undefined'){
+      alert('예상 퇴실시간을 입력해주세요');
+    } else if(confirm(confirmMessage)){
+      //TODO 스프레드시트 업데이트
+      seatUpdate(seats, seatNumber, userName, endTime, false);
+      alert(`${userName}님 ${seatNumber}번 자리 ${endTime}까지 연장되셨습니다.`)
+    }
+  }
+  const checkOut = () => {
+    const confirmMessage = `${userName}님 ${seatNumber}번 자리 취소하시겠습니까?`
+    if(confirm(confirmMessage)){
+      //TODO 스프레드시트 업데이트
+      seatDelete(seats, seatNumber);
+      alert(`${userName}님 ${seatNumber}번 자리 취소되었습니다.`)
+    }
+  }
   return (
     <div className="checkoutModal-container">
       <span className="checkoutModal-item" id="checkoutModal-title">
@@ -18,9 +47,9 @@ const ExtensionCheckout = ({seatNumber}) => {
         <Form
          identification=''
          title='이름' 
-         type='text' 
-         formHint='이름' 
+         type='text'  
          isDisabled={true}
+         formValue={userName}
         />
       </div>
       <div className="checkoutModal-item">
@@ -29,15 +58,16 @@ const ExtensionCheckout = ({seatNumber}) => {
          title='연장시간' 
          type='select' 
          formHint='희망연장시간' 
-         dataSet={set} 
+         dataSet={getEndTimeSet()} 
          isDisabled={false}
+         setData={setEndTime}
         />
       </div>
       <div className="checkoutModal-item" id="extensionButton">
         <BaseButton
          buttonType="submit" 
          title="Extension" 
-         clickEvent="#" 
+         clickEvent={extension} 
         />
       </div>
       <hr className="horizontalRules"/>
@@ -45,7 +75,7 @@ const ExtensionCheckout = ({seatNumber}) => {
         <BaseButton
          buttonType="submit" 
          title="Check Out" 
-         clickEvent="#" 
+         clickEvent={checkOut} 
         />
       </div>
     </div>
