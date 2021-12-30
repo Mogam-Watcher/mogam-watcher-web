@@ -2,11 +2,8 @@
   border: none;
   border-radius: 10px;
   cursor: pointer;
-  /* 수정 */
-  /* margin-bottom: 20px; */
   margin: 0 7px 20px;
   padding: 3px;
-  /* 수정 70 -> 80 */
   height: 70px;
   flex-basis: 70px;
   flex-grow: 0;
@@ -19,6 +16,13 @@
   font-weight: bold;
   height: 70%;
   text-align: center;
+}
+
+@media only screen and (min-width: 360px) {
+  .seat {
+    height: 80px;
+    flex-basis: 80px;  
+  }
 }
 
 @media only screen and (min-width: 768px) {
