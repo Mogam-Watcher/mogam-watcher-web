@@ -15,6 +15,23 @@ const RegistrationForm = ({seatNumber}) => {
         좌석번호 {seatNumber}
       </span>
       <div className="checkInModal-item">
+      <Form 
+         identification='' 
+         title='이름' 
+         type='text' 
+         formHint='이름' 
+         isDisabled={false} 
+        />
+        <Form 
+         identification='' 
+         title='퇴실시간' 
+         type='select' 
+         formHint='예상퇴실시간' 
+         dataSet={set} 
+         isDisabled={false} 
+        />
+      </div>
+      {/* <div className="checkInModal-item">
         <Form 
          identification='' 
          title='이름' 
@@ -32,7 +49,7 @@ const RegistrationForm = ({seatNumber}) => {
          dataSet={set} 
          isDisabled={false} 
         />
-      </div>
+      </div> */}
       <div className="checkInModal-item">
         <BaseButton 
          buttonType="submit" 

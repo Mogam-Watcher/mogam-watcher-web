@@ -53,6 +53,7 @@
     white-space: pre-wrap;
     overflow-y: scroll;
     scrollbar-width: none;
+    font-family: var(--font-notoSans);
   }
   .notice-content::-webkit-scrollbar {
     display: none;

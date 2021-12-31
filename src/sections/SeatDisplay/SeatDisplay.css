@@ -15,12 +15,13 @@
   .seatDisplay-container {
     width: 70%;
     margin: 0 auto;
-    padding-top: 50px;
+    /* padding-top: 50px; */
   }
 }
 
 @media only screen and (min-width: 992px) {
   .seatDisplay-container {
     width: 970px;
+
   }
 }

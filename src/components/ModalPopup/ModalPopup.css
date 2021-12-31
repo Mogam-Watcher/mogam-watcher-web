@@ -21,6 +21,10 @@
 .modal-wrapper::-webkit-scrollbar {
   display: none;
 }
+/* test */
+.modal-test {
+  height: 100%;
+}
 .modal-header .icon-button {
   display: flex;
   justify-content: end;

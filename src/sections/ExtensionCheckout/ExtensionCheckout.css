@@ -5,12 +5,12 @@
 
 /* mobile */
 .checkoutModal-container {
+  height: 80%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: stretch;
+  justify-content: space-between;
   width: 80%;
-  margin: 0 auto;
+  margin: 5% auto;
 }
 .checkoutModal-item {
   flex-basis: 50px;
@@ -19,6 +19,8 @@
   font-size: var(--title-fontSize-sm);
   font-weight: 700;
   color: #1D757D;
+  /* display: flex;
+  align-items: flex-end; */
 }
 .textButton {
   margin: 10px 0;
