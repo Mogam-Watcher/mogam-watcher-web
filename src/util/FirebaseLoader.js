@@ -1,5 +1,5 @@
 import { initializeApp } from 'firebase/app';
-import { getFirestore, collection, getDocs, setDoc, query, where, doc } from 'firebase/firestore';
+import { getFirestore, collection, getDocs, setDoc, query, where, doc, orderBy } from 'firebase/firestore';
 
 const firebaseConfig = {
   apiKey: process.env.FIREBASE_API_KEY,
@@ -21,8 +21,10 @@ const tablesCollectionRef = collection(db, "tables");
 const getAllTables = async () => {
 
   let tempArray = [];
+  
+  const firebaseQuery = query(tablesCollectionRef, orderBy("tableNumber", "asc"));
 
-  const data = await getDocs(tablesCollectionRef);
+  const data = await getDocs(firebaseQuery);
 
   data.docs.map((doc) => {
     tempArray.push({...doc.data(), id:doc.id});
@@ -41,10 +43,10 @@ const getTable = async (number) => {
   const querySnapshot = await getDocs(firebaseQuery);
 
   querySnapshot.forEach((doc) => {
-    tempArray.push({...doc.data(), id:doc.id});
+      tempArray.push({...doc.data(), id:doc.id});
   });
 
-  return tempArray;
+  return JSON.stringify(tempArray);
 
 }
 
