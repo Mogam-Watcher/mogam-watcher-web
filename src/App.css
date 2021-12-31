@@ -18,7 +18,6 @@
 .header-wrapper {
   height: 10%;
 }
-/* TODO-마지막에 height %로 device마다 세로 여백 조절 가능한지 확인 */
 .seatDisplay-container {
   align-content: space-between;
 }

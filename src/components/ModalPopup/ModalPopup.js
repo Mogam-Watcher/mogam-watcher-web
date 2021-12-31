@@ -8,8 +8,7 @@ const ModalPopup = ({isShowing, hide, children}) => {
   const modalContainer = isShowing && (
     <div className="modal-background">
       <div className="modal-wrapper">
-        {/* 임의로 className */}
-        <section className="modal-test">
+        <section className="modal-section">
           <header className="modal-header">
             <div className="closeIcon-wrapper">
             <IconButton imageURL={closeIcon} altContent="closeIcon" clickEvent={hide} />

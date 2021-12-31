@@ -9,7 +9,6 @@
   flex-grow: 0;
   flex-shrink: 0;
 }
-
 .seat-info {
   color: #1D757D;
   font-size: 1.5em;
@@ -42,28 +41,23 @@
     min-width: 80px;
   }
 }
-
 .seat-vacant {
   background-color: #DD712B;
   box-shadow: 3px 3px 3px 1px #D6CAB0;
 }
-
 .seat-occupied {
   background-color: #E0D1BA;
 }
-
 .seat-number {
   font-size: 1em;
   height: 30%;
   padding: 3px;
   text-align: left;
 }
-
 .seat-number-vacant {
   color: #E0D1BA;
   pointer-events: none;
 }
-
 .seat-number-occupied {
   color: #DD712B;
 }

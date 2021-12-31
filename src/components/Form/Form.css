@@ -1,5 +1,4 @@
 :root {
-  /* 추가 media query에 따른 글자크기 */
   --form-fontSize-sm: 1em;
   --form-fontSize-md: 1.5em;
 }
@@ -19,7 +18,6 @@
   text-align: left;
   width: 30%;
   font-size: var(--form-fontSize-sm);
-  /* font-weight: 600; */
 }
 
 .form-block {

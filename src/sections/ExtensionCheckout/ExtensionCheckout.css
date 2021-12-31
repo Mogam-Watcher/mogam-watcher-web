@@ -19,8 +19,6 @@
   font-size: var(--title-fontSize-sm);
   font-weight: 700;
   color: #1D757D;
-  /* display: flex;
-  align-items: flex-end; */
 }
 .textButton {
   margin: 10px 0;

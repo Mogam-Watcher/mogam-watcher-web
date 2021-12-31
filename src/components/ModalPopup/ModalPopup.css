@@ -21,8 +21,7 @@
 .modal-wrapper::-webkit-scrollbar {
   display: none;
 }
-/* test */
-.modal-test {
+.modal-section {
   height: 100%;
 }
 .modal-header .icon-button {

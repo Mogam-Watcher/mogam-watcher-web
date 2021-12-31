@@ -1,8 +1,5 @@
   .header-wrapper {
     width: 100%;
-    /* height: 14%; */
-    /* 삭제 */
-    /* background-color: #E0D1BA; */
     display: flex;
     align-items:flex-end;
     justify-content: space-between;
@@ -70,7 +67,6 @@
     font-size: 2em;
   }
   .infoIcon-wrapper {
-    /* height: 50%; */
     margin-right: 50px;
   }
   .infoIcon-wrapper img {
