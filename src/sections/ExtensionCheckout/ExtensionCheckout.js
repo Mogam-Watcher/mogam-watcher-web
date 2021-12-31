@@ -22,8 +22,6 @@ const ExtensionCheckout = ({seatNumber}) => {
          formHint='이름' 
          isDisabled={true}
         />
-      </div>
-      <div className="checkoutModal-item">
         <Form
          identification='' 
          title='연장시간' 

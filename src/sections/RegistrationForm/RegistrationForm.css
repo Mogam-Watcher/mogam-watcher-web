@@ -5,18 +5,19 @@
 
 /* mobile */
 .checkInModal-container {
+  height: 70%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: stretch;
+  justify-content: space-between;
   width: 80%;
   margin: 0 auto;
-  padding-top: 30px;
 }
 .checkInModal-item {
   flex-basis: 70px;
 }
 #checkInModal-title {
+  display: flex;
+  align-items: center;
   font-size: var(--title-fontSize-sm);
   font-weight: 700;
   color: #1D757D;
