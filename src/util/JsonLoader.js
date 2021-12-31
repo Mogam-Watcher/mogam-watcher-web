@@ -1,6 +1,6 @@
 import json from './dummy.json';
 
-const getTables = () => {
+const getAllTables = () => {
 
   let tempArray = [];
   
@@ -12,7 +12,7 @@ const getTables = () => {
 
 }
 
-const searchTable = (number) => {
+const getTable = (number) => {
 
   let tempArray = [];
 
@@ -42,7 +42,8 @@ const updateTable = (number, name, time) => {
     }
     tempArray.push(e);
   });
-
+  
+  return tempArray;
 }
 
 const deleteTable = (number) => {
@@ -65,4 +66,4 @@ const deleteTable = (number) => {
   return tempArray;
 }
 
-export default { getTables, searchTable, updateTable, deleteTable };
+export default { getAllTables, getTable, updateTable, deleteTable };

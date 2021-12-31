@@ -1,34 +1,24 @@
-import { initializeApp } from "firebase/app";
+import { initializeApp } from 'firebase/app';
 import { getFirestore, collection, getDocs, setDoc, query, where, doc } from 'firebase/firestore';
 
 const firebaseConfig = {
-
-  apiKey: process.env.API_KEY,
-
-  authDomain: process.env.AUTH_DOMAIN,
-
-  databaseURL: process.env.DATABASE_URL,
-
-  projectId: process.env.PROJECT_ID,
-
-  storageBucket: process.env.STORAGE_BUCKET,
-
-  messagingSenderId: process.env.MESSAGING_SENDER_ID,
-
-  appId: process.env.APP_ID,
-
-  measurementId: process.env.MESSURMENT_ID
-
+  apiKey: process.env.FIREBASE_API_KEY,
+  authDomain: process.env.FIREBASE_AUTH_DOMAIN,
+  databaseURL: process.env.FIREBASE_DATABASE_URL,
+  projectId: process.env.FIREBASE_PROJECT_ID,
+  storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.FIREBASE_APP_ID,
+  measurementId: process.env.FIREBASE_MESSURMENT_ID
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
 const db = getFirestore(app);
 
 const tablesCollectionRef = collection(db, "tables");
 
-const getTables = async () => {
+const getAllTables = async () => {
 
   let tempArray = [];
 
@@ -42,7 +32,7 @@ const getTables = async () => {
 
 };
 
-const searchTable = async (number) => {
+const getTable = async (number) => {
 
   let tempArray = [];
 
@@ -86,4 +76,4 @@ const deleteTable = async (number) => {
 
 }
 
-export default { getTables, updateTable, deleteTable, searchTable };
+export default { getAllTables, updateTable, deleteTable, getTable };
