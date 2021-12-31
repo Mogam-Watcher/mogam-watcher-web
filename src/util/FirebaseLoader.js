@@ -20,34 +20,24 @@ const tablesCollectionRef = collection(db, "tables");
 
 const getAllTables = async () => {
 
-  let tempArray = [];
-  
   const firebaseQuery = query(tablesCollectionRef, orderBy("tableNumber", "asc"));
 
-  const data = await getDocs(firebaseQuery);
+  const querySnapShot = await getDocs(firebaseQuery);
 
-  data.docs.map((doc) => {
-    tempArray.push({...doc.data(), id:doc.id});
-  });
-
-  return tempArray;
-
+  const getData = querySnapShot.docs.map((doc) => ({...doc.data(), id:doc.id}));
+  
+  return getData;
 };
 
 const getTable = async (number) => {
 
-  let tempArray = [];
-
   const firebaseQuery = query(tablesCollectionRef, where("tableNumber", "==", number));
 
-  const querySnapshot = await getDocs(firebaseQuery);
+  const querySnapShot = await getDocs(firebaseQuery);
 
-  querySnapshot.forEach((doc) => {
-      tempArray.push({...doc.data(), id:doc.id});
-  });
-
-  return JSON.stringify(tempArray);
-
+  const getData = querySnapShot.docs.map((doc) => ({...doc.data(), id:doc.id}));
+  
+  return getData;
 }
 
 const updateTable = async (number, name, time) => {
@@ -78,4 +68,15 @@ const deleteTable = async (number) => {
 
 }
 
-export default { getAllTables, updateTable, deleteTable, getTable };
+const getDataToArray = (getFunctions) => {
+
+  const data = getFunctions;
+
+  let arr = [];
+
+  data.then((res) => arr.push(res));
+
+  return arr;
+}
+
+export default { getAllTables, updateTable, deleteTable, getTable , getDataToArray};
