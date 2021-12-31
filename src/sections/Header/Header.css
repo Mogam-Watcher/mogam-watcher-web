@@ -36,15 +36,17 @@
   }
   .notice-wrapper {
     width: 90%;
+    height: 100%;
     margin: 0 auto;
   }
   .notice-title {
-    height: 10%;
+    height: 7%;
     font-size: 1em;
     color: #1d757d;
     padding: 0 auto;
   }
   .notice-content {
+    height: 85%;
     font-size: 0.8em;
     padding-bottom: 10px;
     white-space: pre-wrap;
@@ -91,15 +93,3 @@
     margin-right: 0;
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
