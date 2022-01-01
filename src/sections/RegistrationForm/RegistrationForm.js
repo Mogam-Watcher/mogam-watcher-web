@@ -2,8 +2,9 @@ import React, { useContext, useState } from 'react';
 import Form from '../../components/Form/Form';
 import BaseButton from '../../components/BaseButton/BaseButton';
 import './RegistrationForm.css';
-import { SeatContext } from '../../App';
+import { SeatContext } from '../SeatDisplay/SeatDisplay';
 import { seatUpdate } from '../../models/Seats';
+import FirebaseLoader from '../../util/FirebaseLoader';
 
 const RegistrationForm = ({seatNumber}) => {
   const [userName, setUserName] = useState();
@@ -28,7 +29,7 @@ const RegistrationForm = ({seatNumber}) => {
       alert('예상 퇴실시간을 입력해주세요');
     } else if(confirm(confirmMessage)){
       //TODO 스프레드시트 업데이트
-      seatUpdate(seats, seatNumber, userName, endTime, true);
+      FirebaseLoader.updateTable(seatNumber, userName, endTime, true);
       alert(`${userName}님 ${seatNumber}번 자리 ${endTime}까지 신청되셨습니다.`)
     }
   }

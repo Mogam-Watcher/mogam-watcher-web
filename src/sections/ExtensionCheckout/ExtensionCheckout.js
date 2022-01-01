@@ -2,13 +2,14 @@ import React,{ useContext, useState } from 'react';
 import Form from '../../components/Form/Form';
 import BaseButton from '../../components/BaseButton/BaseButton';
 import './ExtensionCheckout.css';
-import { SeatContext } from '../../App';
-import { seatDelete, seatUpdate } from '../../models/Seats';
+import { SeatContext } from '../SeatDisplay/SeatDisplay';
+import FirebaseLoader from '../../util/FirebaseLoader';
 
 const ExtensionCheckout = ({seatNumber}) => {
   const [endTime, setEndTime] = useState();
-  const seats = useContext(SeatContext);
-  const userName = seats.seatArray[seatNumber].userName;
+  const seatArray = useContext(SeatContext);
+  const userName = seatArray[seatNumber].userName;
+  console.log(seatArray[seatNumber]);
 
   function getEndTimeSet() {
     const currentTime = new Date().getHours();
@@ -26,7 +27,7 @@ const ExtensionCheckout = ({seatNumber}) => {
       alert('예상 퇴실시간을 입력해주세요');
     } else if(confirm(confirmMessage)){
       //TODO 스프레드시트 업데이트
-      seatUpdate(seats, seatNumber, userName, endTime, false);
+      FirebaseLoader.updateTable(seatNumber, userName, endTime, true);
       alert(`${userName}님 ${seatNumber}번 자리 ${endTime}까지 연장되셨습니다.`)
     }
   }
@@ -34,7 +35,7 @@ const ExtensionCheckout = ({seatNumber}) => {
     const confirmMessage = `${userName}님 ${seatNumber}번 자리 취소하시겠습니까?`
     if(confirm(confirmMessage)){
       //TODO 스프레드시트 업데이트
-      seatDelete(seats, seatNumber);
+      FirebaseLoader.deleteTable(seatNumber);
       alert(`${userName}님 ${seatNumber}번 자리 취소되었습니다.`)
     }
   }
