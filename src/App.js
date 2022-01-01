@@ -35,7 +35,7 @@ const App = () => {
   return (
     <div className="App">
       <Header noticeTitle={title} noticeContent={content} />
-      <SeatDisplay/>
+      <SeatDisplay total='12'/>
     </div>
   );
 }
