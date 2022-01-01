@@ -5,9 +5,9 @@ import './SeatDisplay.css';
 import { dbService } from '../../util/FirebaseLoader';
 
 const SeatContext = createContext();
-const SeatDisplay = () => {
-  const totalSeat = 12;
-  const [countVacantSeat, setCountVacantSeat] = useState(12);
+const SeatDisplay = ({total}) => {
+  const totalSeat = total;
+  const [countVacantSeat, setCountVacantSeat] = useState(total);
   const [seatArray, setSeatArray] = useState([]);
   const [loading, setLoading] = useState();
 
@@ -17,9 +17,15 @@ const SeatDisplay = () => {
     .collection("tables")
     .orderBy('seatNumber', 'asc')
     .onSnapshot((snapshot) => {
-      const seatArray = snapshot.docs.map((doc) => ({
-        ...doc.data(),
-      }));
+      const seatArray=[];
+      let count = 0;
+      snapshot.docs.map((doc) => {
+        seatArray.push(doc.data());
+        if(doc.data().isOccupied == false){
+          count++;
+        }
+      });
+      setCountVacantSeat(count);
       setSeatArray(seatArray);
       setLoading(false);
     });
