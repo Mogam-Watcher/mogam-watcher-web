@@ -1,5 +1,4 @@
 :root {
-  /* 추가 media query에 따른 글자크기 */
   --form-fontSize-sm: 1em;
   --form-fontSize-md: 1.5em;
 }
@@ -10,9 +9,7 @@
   background-color: transparent;
   display: flex;
   height: inherit;
-  /* 삭제 */
-  /* margin: 3px;
-  padding: 3px; */
+  margin: 30px 0;
   font-size: var(--form-fontSize-sm);
 }
   
@@ -21,7 +18,6 @@
   text-align: left;
   width: 30%;
   font-size: var(--form-fontSize-sm);
-  font-weight: 600;
 }
 
 .form-block {
@@ -38,8 +34,6 @@
 .form-block-arrow {
   -webkit-appearance: none;
   -moz-appearance: none;
-  /* 이름과 동일하게 가기 위해서 삭제 */
-  /* background: transparent; */
   background-color: #fff;
   background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='50' viewBox='0 0 24 24' width='50' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
   background-repeat: no-repeat;

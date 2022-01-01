@@ -10,23 +10,23 @@ const Header = ({noticeTitle, noticeContent}) => {
   const {isShowing, toggle} = useModal();
 
   return (
-  <div className="header-wrapper">
-    <div className="mogamLogo-wrapper">
-      <img className="mogamLogo" src={mogamIcon} />
-      <span className="mogamLogo-title">Mogam</span>
+    <div className="header-wrapper">
+      <div className="mogamLogo-wrapper">
+        <img className="mogamLogo" src={mogamIcon} />
+        <span className="mogamLogo-title">Mogam</span>
+      </div>
+      <div className="infoIcon-wrapper">
+      <IconButton imageURL={infoIcon} altContent="infoIcon" clickEvent={toggle} />
+      <ModalPopup isShowing={isShowing} hide={toggle} >
+        <section className="notice-wrapper">
+          <h1 className="notice-title">{noticeTitle}</h1>
+          <p className="notice-content">
+          {noticeContent}
+          </p>
+        </section>
+      </ModalPopup>
+      </div>
     </div>
-    <div className="infoIcon-wrapper">
-    <IconButton imageURL={infoIcon} altContent="infoIcon" clickEvent={toggle} />
-    <ModalPopup isShowing={isShowing} hide={toggle} >
-      <section className="notice-wrapper">
-        <h1 className="notice-title">{noticeTitle}</h1>
-        <p className="notice-content">
-        {noticeContent}
-        </p>
-      </section>
-    </ModalPopup>
-    </div>
-  </div>
   );
 };
 

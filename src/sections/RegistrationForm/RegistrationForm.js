@@ -3,7 +3,6 @@ import Form from '../../components/Form/Form';
 import BaseButton from '../../components/BaseButton/BaseButton';
 import './RegistrationForm.css';
 import { SeatContext } from '../SeatDisplay/SeatDisplay';
-import { seatUpdate } from '../../models/Seats';
 import FirebaseLoader from '../../util/FirebaseLoader';
 
 const RegistrationForm = ({seatNumber}) => {

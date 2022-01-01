@@ -52,8 +52,6 @@ const ExtensionCheckout = ({seatNumber}) => {
          isDisabled={true}
          formValue={userName}
         />
-      </div>
-      <div className="checkoutModal-item">
         <Form
          identification='' 
          title='연장시간' 
