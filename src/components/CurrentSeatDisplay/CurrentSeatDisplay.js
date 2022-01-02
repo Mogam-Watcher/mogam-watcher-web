@@ -3,7 +3,7 @@ import './CurrentSeatDisplay.css';
 
 const CurrentSeatDisplay = ({isOccupied, seatsNumber}) => {
   
-  const status = isOccupied ? '사용가능' : '사용중';
+  const status = isOccupied ? '사용 가능' : '사용 중';
   const seatsType = isOccupied ? 'vacant' : 'occupied';
 
   return(
