@@ -3,10 +3,10 @@
   flex-flow: row wrap;
   -ms-flex-flow: row wrap;
   justify-content: space-between;
-  margin-top: 40px;
+  margin-top: 50px;
 }
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 768px) {
   .seatMap-container {
     display: flex;
     flex-flow: row wrap;
@@ -16,7 +16,7 @@
   }
 } 
 
-@media only screen and (min-width: 1000px) {
+@media only screen and (min-width: 992px) {
   .seatMap-container {
     display: grid;
     grid-template-columns: repeat(30, 10px);

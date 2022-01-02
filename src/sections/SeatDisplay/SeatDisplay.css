@@ -1,19 +1,26 @@
 .seatDisplay-container {
-  width: 70%;
-  margin: 0 auto;
+  width: 90%;
+  margin: 20px auto;
   align-content: center;
 }
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 360px) {
   .seatDisplay-container {
-    width: 60%;
+    width: 80%;
+    align-content: center;
+  }  
+}
+
+@media only screen and (min-width: 768px) {
+  .seatDisplay-container {
+    width: 70%;
     margin: 0 auto;
   }
 }
 
-@media only screen and (min-width: 1000px) {
+@media only screen and (min-width: 992px) {
   .seatDisplay-container {
     width: 970px;
-    margin: 0 auto;
+
   }
 }

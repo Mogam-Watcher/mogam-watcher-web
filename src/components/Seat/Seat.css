@@ -2,57 +2,63 @@
   border: none;
   border-radius: 10px;
   cursor: pointer;
-  margin: 10px;
+  margin: 0 7px 20px;
   padding: 3px;
-  height: 80px;
-  flex-basis: 80px;
+  height: 70px;
+  flex-basis: 70px;
   flex-grow: 0;
   flex-shrink: 0;
 }
+.seat-info {
+  color: #1D757D;
+  font-size: 1.5em;
+  font-weight: bold;
+  height: 70%;
+  text-align: center;
+}
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 360px) {
   .seat {
-    min-height: 100px;
-    min-width: 100px;
+    height: 80px;
+    flex-basis: 80px;  
   }
 }
 
-@media only screen and (min-width: 1000px) {
+@media only screen and (min-width: 768px) {
+  .seat {
+    min-height: 100px;
+    min-width: 100px;
+    margin: 20px;
+  }
+  .seat-info {
+    font-size: 2em;
+  }
+}
+
+@media only screen and (min-width: 992px) {
   .seat {
     min-height: 80px;
     min-width: 80px;
   }
 }
-
 .seat-vacant {
   background-color: #DD712B;
   box-shadow: 3px 3px 3px 1px #D6CAB0;
 }
-
 .seat-occupied {
   background-color: #E0D1BA;
 }
-
 .seat-number {
   font-size: 1em;
   height: 30%;
   padding: 3px;
   text-align: left;
 }
-
 .seat-number-vacant {
   color: #E0D1BA;
   pointer-events: none;
 }
-
 .seat-number-occupied {
   color: #DD712B;
 }
 
-.seat-info {
-  color: #1D757D;
-  font-size: 2em;
-  font-weight: bold;
-  height: 70%;
-  text-align: center;
-}
