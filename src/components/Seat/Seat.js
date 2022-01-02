@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import './Seat.css';
 import useModal from '../../components/ModalPopup/useModal';
 import ModalPopup from '../../components/ModalPopup/ModalPopup';

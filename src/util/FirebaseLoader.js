@@ -1,3 +1,5 @@
+import firebase from 'firebase/compat/app';
+import 'firebase/compat/firestore';
 import { initializeApp } from 'firebase/app';
 import { getFirestore, collection, getDocs, setDoc, query, where, doc, orderBy } from 'firebase/firestore';
 
@@ -17,6 +19,9 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 const tablesCollectionRef = collection(db, "tables");
+
+firebase.initializeApp(firebaseConfig);
+export const dbService = firebase.firestore();
 
 const getAllTables = async () => {
 
@@ -40,12 +45,13 @@ const getTable = async (number) => {
   return getData;
 }
 
-const updateTable = async (number, name, time) => {
+const updateTable = async (number, name, time, isOccupied) => {
 
   const dataToUpdate = {
-    tableNumber: number,
-    name: name,
+    seatNumber: number,
+    userName: name,
     endTime: time,
+    isOccupied: isOccupied,
   }
 
   const tableDoc = doc(db,"tables", `${number}`);
@@ -57,9 +63,10 @@ const updateTable = async (number, name, time) => {
 const deleteTable = async (number) => {
 
   const dataToUpdate = {
-    tableNumber: number,
+    seatNumber: number,
     name: "",
     endTime: "",
+    isOccupied: false
   }
 
   const tableDoc = doc(db,"tables", `${number}`);
