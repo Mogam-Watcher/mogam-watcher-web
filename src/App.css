@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Jua&family=Noto+Sans+KR:wght@300&family=Noto+Serif+KR:wght@300&display=swap');
+
 * {
   padding: 0;
   margin: 0;
@@ -12,7 +13,7 @@
 
 .App {
   background-color: #e0d1ba86;
-  height: 120vh;
+  height: 110vh;
   font-family: var(--font-jua);
 }
 .header-wrapper {
