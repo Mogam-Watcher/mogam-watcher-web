@@ -21,15 +21,14 @@ const ExtensionCheckout = ({seatNumber, hide}) => {
     return endTimeSet;
   }
   const extension = () => {
-    const confirmMessage = `${userName}님 ${seatNumber}번 자리 ${endTime}까지 연장하시겠습니까?`
+    const confirmMessage = `${userName}님 ${seatNumber}번 자리 ${endTime}까지 사용하시겠습니까?`
     //TODO 유효성검사
     if(typeof endTime === 'undefined'){
       alert('예상 퇴실시간을 입력해주세요');
     } else if(confirm(confirmMessage)){
       //TODO 스프레드시트 업데이트
       FirebaseLoader.updateTable(seatNumber, userName, endTime, true);
-      alert(`${userName}님 ${seatNumber}번 자리 ${endTime}까지 연장되셨습니다.`);
-      hide();
+      alert(`${userName}님 ${seatNumber}번 자리 ${endTime}까지 사용하실 수 있습니다.`)
     }
   }
   const checkOut = () => {
