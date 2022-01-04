@@ -5,7 +5,7 @@ import './RegistrationForm.css';
 import { SeatContext } from '../SeatDisplay/SeatDisplay';
 import FirebaseLoader from '../../util/FirebaseLoader';
 
-const RegistrationForm = ({seatNumber}) => {
+const RegistrationForm = ({seatNumber, hide}) => {
   const [userName, setUserName] = useState();
   const [endTime, setEndTime] = useState();
   const seats = useContext(SeatContext);
@@ -19,6 +19,7 @@ const RegistrationForm = ({seatNumber}) => {
     }
     return endTimeSet;
   }
+  
   const checkIn = () => {
     const confirmMessage = `${userName}님 ${seatNumber}번 자리 ${endTime}까지 신청하시겠습니까?`
     //TODO 유효성검사
@@ -30,6 +31,7 @@ const RegistrationForm = ({seatNumber}) => {
       //TODO 스프레드시트 업데이트
       FirebaseLoader.updateTable(seatNumber, userName, endTime, true);
       alert(`${userName}님 ${seatNumber}번 자리 ${endTime}까지 신청되셨습니다.`)
+      hide();
     }
   }
   

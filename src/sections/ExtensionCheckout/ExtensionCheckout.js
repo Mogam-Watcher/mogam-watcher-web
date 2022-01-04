@@ -5,7 +5,7 @@ import './ExtensionCheckout.css';
 import { SeatContext } from '../SeatDisplay/SeatDisplay';
 import FirebaseLoader from '../../util/FirebaseLoader';
 
-const ExtensionCheckout = ({seatNumber}) => {
+const ExtensionCheckout = ({seatNumber, hide}) => {
   const [endTime, setEndTime] = useState();
   const seatArray = useContext(SeatContext);
   const userName = seatArray[seatNumber].userName;
@@ -28,7 +28,8 @@ const ExtensionCheckout = ({seatNumber}) => {
     } else if(confirm(confirmMessage)){
       //TODO 스프레드시트 업데이트
       FirebaseLoader.updateTable(seatNumber, userName, endTime, true);
-      alert(`${userName}님 ${seatNumber}번 자리 ${endTime}까지 연장되셨습니다.`)
+      alert(`${userName}님 ${seatNumber}번 자리 ${endTime}까지 연장되셨습니다.`);
+      hide();
     }
   }
   const checkOut = () => {
@@ -36,7 +37,8 @@ const ExtensionCheckout = ({seatNumber}) => {
     if(confirm(confirmMessage)){
       //TODO 스프레드시트 업데이트
       FirebaseLoader.deleteTable(seatNumber);
-      alert(`${userName}님 ${seatNumber}번 자리 취소되었습니다.`)
+      alert(`${userName}님 ${seatNumber}번 자리 취소되었습니다.`);
+      hide();
     }
   }
   return (
