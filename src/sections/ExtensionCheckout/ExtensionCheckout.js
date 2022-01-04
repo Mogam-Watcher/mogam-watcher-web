@@ -9,7 +9,6 @@ const ExtensionCheckout = ({seatNumber, hide}) => {
   const [endTime, setEndTime] = useState();
   const seatArray = useContext(SeatContext);
   const userName = seatArray[seatNumber].userName;
-  console.log(seatArray[seatNumber]);
 
   function getEndTimeSet() {
     const currentTime = new Date().getHours();
@@ -18,6 +17,7 @@ const ExtensionCheckout = ({seatNumber, hide}) => {
     for(var i = 0; i < maxEndTime - currentTime; i++){
       endTimeSet[i] = {key: i + 1, contents: `${currentTime + i + 1}:00`};
     }
+    endTimeSet.push({key: endTimeSet.length + 1, contents: 'none'});
     return endTimeSet;
   }
   const extension = () => {
