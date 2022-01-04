@@ -34,7 +34,7 @@
 }
 .closeIcon-wrapper {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
 }
 .closeIcon-wrapper img {
   width: 20px;
