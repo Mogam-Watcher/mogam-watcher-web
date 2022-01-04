@@ -1,5 +1,5 @@
 .footer-wrapper {
-  padding: 20px 0;
+  padding: 40px 0;
   text-align: center;
   color: #1D757D;
 }
@@ -8,7 +8,6 @@
     width: 80%;
     margin: 0 auto;
     margin-top: 20px;
-    padding-top: 30px;
   }
 }
 
@@ -17,14 +16,12 @@
     width: 70%;
     margin: 0 auto;
     margin-top: 20px;
-    padding-top: 30px;
   }
 }
 @media only screen and (min-width: 992px) {
   .footer-wrapper {
     width: 970px;
     margin: 0 auto;
-    margin-top: 20px;
-    padding-top: 30px;
+    margin-top: 30px;
   }
 }
