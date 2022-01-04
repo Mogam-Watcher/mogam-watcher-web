@@ -1,6 +1,7 @@
 .footer-wrapper {
   padding: 40px 0;
   text-align: center;
+  font-size: 1.0em;
   color: #1D757D;
 }
 @media only screen and (min-width: 360px) {
