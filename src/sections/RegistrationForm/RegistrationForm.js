@@ -48,8 +48,6 @@ const RegistrationForm = ({seatNumber}) => {
          isDisabled={false} 
          setData={setUserName}
         />
-      </div>
-      <div className="checkInModal-item">
         <Form 
          identification='' 
          title='퇴실시간' 
@@ -63,7 +61,7 @@ const RegistrationForm = ({seatNumber}) => {
       <div className="checkInModal-item">
         <BaseButton 
          buttonType="submit" 
-         title="Check In" 
+         title="체 크 인" 
          clickEvent={checkIn} 
         />
       </div>

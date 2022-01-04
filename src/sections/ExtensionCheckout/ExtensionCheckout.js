@@ -54,9 +54,9 @@ const ExtensionCheckout = ({seatNumber}) => {
         />
         <Form
          identification='' 
-         title='연장시간' 
+         title='변경시간' 
          type='select' 
-         formHint='희망연장시간' 
+         formHint='희망변경시간' 
          dataSet={getEndTimeSet()} 
          isDisabled={false}
          setData={setEndTime}
@@ -65,7 +65,7 @@ const ExtensionCheckout = ({seatNumber}) => {
       <div className="checkoutModal-item" id="extensionButton">
         <BaseButton
          buttonType="submit" 
-         title="Extension" 
+         title="변 경" 
          clickEvent={extension} 
         />
       </div>
@@ -73,7 +73,7 @@ const ExtensionCheckout = ({seatNumber}) => {
       <div className="checkoutModal-item" id="checkoutButton">
         <BaseButton
          buttonType="submit" 
-         title="Check Out" 
+         title="체 크 아 웃" 
          clickEvent={checkOut} 
         />
       </div>
