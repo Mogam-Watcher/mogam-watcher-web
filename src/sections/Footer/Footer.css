@@ -1,0 +1,30 @@
+.footer-wrapper {
+  padding: 20px 0;
+  text-align: center;
+  color: #1D757D;
+}
+@media only screen and (min-width: 360px) {
+  .footer-wrapper {
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 20px;
+    padding-top: 30px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .footer-wrapper {
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 20px;
+    padding-top: 30px;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .footer-wrapper {
+    width: 970px;
+    margin: 0 auto;
+    margin-top: 20px;
+    padding-top: 30px;
+  }
+}
