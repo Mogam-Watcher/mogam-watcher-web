@@ -2,13 +2,11 @@ import React, { useContext, useState } from 'react';
 import Form from '../../components/Form/Form';
 import BaseButton from '../../components/BaseButton/BaseButton';
 import './RegistrationForm.css';
-import { SeatContext } from '../SeatDisplay/SeatDisplay';
 import FirebaseLoader from '../../util/FirebaseLoader';
 
 const RegistrationForm = ({seatNumber}) => {
   const [userName, setUserName] = useState();
   const [endTime, setEndTime] = useState();
-  const seats = useContext(SeatContext);
 
   function getEndTimeSet() {
     const currentTime = new Date().getHours();
@@ -17,6 +15,7 @@ const RegistrationForm = ({seatNumber}) => {
     for(var i = 0; i < maxEndTime - currentTime; i++){
       endTimeSet[i] = {key: i + 1, contents: `${currentTime + i + 1}:00`};
     }
+    endTimeSet.push({key: endTimeSet.length + 1, contents: 'none'});
     return endTimeSet;
   }
   const checkIn = () => {
