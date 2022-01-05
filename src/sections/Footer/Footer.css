@@ -9,6 +9,7 @@
     width: 80%;
     margin: 0 auto;
     margin-top: 20px;
+    max-inline-size: 280px;
   }
 }
 
@@ -17,6 +18,7 @@
     width: 70%;
     margin: 0 auto;
     margin-top: 20px;
+    max-inline-size: 400px;
   }
 }
 @media only screen and (min-width: 992px) {
@@ -24,5 +26,6 @@
     width: 970px;
     margin: 0 auto;
     margin-top: 30px;
+    max-inline-size: 760px;
   }
 }
