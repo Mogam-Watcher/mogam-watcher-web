@@ -20,6 +20,8 @@ const db = getFirestore(app);
 
 const tablesCollectionRef = collection(db, "tables");
 
+const dateCollectionRef = collection(db, "dateToRefresh");
+
 firebase.initializeApp(firebaseConfig);
 export const dbService = firebase.firestore();
 
@@ -43,6 +45,27 @@ const getTable = async (number) => {
   const getData = querySnapShot.docs.map((doc) => ({...doc.data(), id:doc.id}));
   
   return getData;
+}
+
+const getDate = async () => {
+
+  const querySnapShot = await getDocs(dateCollectionRef);
+
+  const getData = querySnapShot.docs.map((doc) => ({...doc.data(), id:doc.id}));
+  
+  return getData;
+}
+
+const updateDate = async (today) => {
+
+  const dateToUpdate = {
+    savedDate: today
+  }
+  
+  const dateDoc = doc(db,"dateToRefresh", "date");
+
+  await setDoc(dateDoc, dateToUpdate);
+
 }
 
 const updateTable = async (number, name, time, isOccupied) => {
@@ -86,4 +109,25 @@ const getDataToArray = (getFunctions) => {
   return arr;
 }
 
-export default { getAllTables, updateTable, deleteTable, getTable , getDataToArray};
+const refreshDatabase = () =>{
+
+  const today = new Date().getDate();
+  
+  getDate().then((res) => {
+    res.map ((e) => {
+      if ( e.savedDate === today ){
+        console.log("This web is running normaly");
+      } else {
+        for ( let i = 0; i <12; i++){
+          deleteTable(i);
+        }
+        updateDate(today);
+        console.log("The db is reset");
+      }
+    });
+  })
+  .catch((e) => console.log(e));
+  
+}
+
+export default { getAllTables, updateTable, deleteTable, getTable , getDataToArray, refreshDatabase};

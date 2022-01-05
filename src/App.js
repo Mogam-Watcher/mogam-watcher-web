@@ -3,6 +3,9 @@ import './App.css';
 import Footer from './sections/Footer/Footer';
 import Header from './sections/Header/Header';
 import SeatDisplay from './sections/SeatDisplay/SeatDisplay';
+import FirebaseLoader from './util/FirebaseLoader';
+
+FirebaseLoader.refreshDatabase();
 
 const App = () => {
   // TODO remove & data binding

@@ -10,6 +10,7 @@ const ExtensionCheckout = ({seatNumber, hide}) => {
   const seatArray = useContext(SeatContext);
   const userName = seatArray[seatNumber].userName;
 
+ 
   function getEndTimeSet() {
     const currentTime = new Date().getHours();
     const maxEndTime = 24;
@@ -65,7 +66,7 @@ const ExtensionCheckout = ({seatNumber, hide}) => {
       <div className="checkoutModal-item" id="extensionButton">
         <BaseButton
          buttonType="submit" 
-         title="변 경" 
+         title="변 경"
          clickEvent={extension} 
         />
       </div>
@@ -73,7 +74,7 @@ const ExtensionCheckout = ({seatNumber, hide}) => {
       <div className="checkoutModal-item" id="checkoutButton">
         <BaseButton
          buttonType="submit" 
-         title="체 크 아 웃" 
+         title="체 크 아 웃"
          clickEvent={checkOut} 
         />
       </div>
