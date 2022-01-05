@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useRef } from 'react';
 import Form from '../../components/Form/Form';
 import BaseButton from '../../components/BaseButton/BaseButton';
 import './RegistrationForm.css';
@@ -7,6 +7,7 @@ import FirebaseLoader from '../../util/FirebaseLoader';
 const RegistrationForm = ({seatNumber, hide}) => {
   const [userName, setUserName] = useState();
   const [endTime, setEndTime] = useState();
+  const inputRef = useRef();
 
   function getEndTimeSet() {
     const currentTime = new Date().getHours();
@@ -21,15 +22,38 @@ const RegistrationForm = ({seatNumber, hide}) => {
   
   const checkIn = () => {
     const confirmMessage = `${userName}님 ${seatNumber}번 자리 ${endTime}까지 사용하시겠습니까?`
-    //TODO 유효성검사
+
     if(typeof userName === 'undefined'){
-      alert('이름을 입력해주세요');
-    } else if(typeof endTime === 'undefined'){
+      alert("이름을 입력해주세요.");
+      inputRef.current.focus();
+      return false;
+    } 
+    if(userName.length <= 1) {
+      alert("이름을 두 글자 이상 입력해 주세요.");
+      inputRef.current.focus();
+      return false;
+    } 
+    let replaceSpecialLetter 
+      = /[~!@\#$%^&*\()\-=+_'\;<>0-9\/.\`:\"\\,\[\]?|{}]/gi;
+    if(userName.match(replaceSpecialLetter)) {
+      alert("이름에 숫자나 특수기호가 포함되어 있습니다.");
+      inputRef.current.focus();
+      return false;
+    }
+    let replaceNotFullKorean
+      = /[ㄱ-ㅎㅏ-ㅣ]/gi;
+    if(userName.match(replaceNotFullKorean)) {
+      alert("이름이 잘못 표기되었습니다.");
+      inputRef.current.focus();
+      return false;
+    }
+    if(typeof endTime === 'undefined'){
       alert('예상 퇴실시간을 입력해주세요');
     } else if(confirm(confirmMessage)){
       //TODO 스프레드시트 업데이트
       FirebaseLoader.updateTable(seatNumber, userName, endTime, true);
-      alert(`${userName}님 ${seatNumber}번 자리 ${endTime}까지 사용하실 수 있습니다.`)
+      alert(`${userName}님 ${seatNumber}번 자리 ${endTime}까지 사용하실 수 있습니다.`);
+      hide();
     }
   }
   
@@ -40,6 +64,7 @@ const RegistrationForm = ({seatNumber, hide}) => {
       </span>
       <div className="checkInModal-item">
         <Form 
+        inputRef={inputRef}
          identification='' 
          title='이름' 
          type='text' 
