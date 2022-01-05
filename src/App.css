@@ -13,11 +13,11 @@
 
 .App {
   background-color: #e0d1ba86;
-  height: 110vh;
+  min-height: 100vh;
   font-family: var(--font-jua);
 }
 .header-wrapper {
-  height: 10%;
+  min-height: 15%;
 }
 .seatDisplay-container {
   align-content: space-between;

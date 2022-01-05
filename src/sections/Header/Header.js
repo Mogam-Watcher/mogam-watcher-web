@@ -12,7 +12,7 @@ const Header = ({noticeTitle, noticeContent}) => {
   return (
     <div className="header-wrapper">
       <div className="mogamLogo-wrapper">
-        <img className="mogamLogo" src={mogamIcon} />
+        <img className="mogamLogo" src={mogamIcon}/>
         <span className="mogamLogo-title">Mogam</span>
       </div>
       <div className="infoIcon-wrapper">
