@@ -32,7 +32,7 @@ const App = () => {
   목암 자리 현황표는 실시간으로 목암에 자리가 있는지 확인하기 위한 용도입니다. 
   원활한 목암 사용을 위해 입장 및 퇴장 시 현황표 수정을 반드시 해주시기 바랍니다. 
   장시간 (2시간 이상) 자리를 비울 시 다른 사람들이 이용할 수 있게 짐을 치워주세요.)`;
-  const names = [" Eunae Jang"," Gyumin Lee"," Hyejin Kang"," Hyun Kim"," Se Rin Yang"," Sungdae Kim"," Yoseob Shim"]
+  const names = ["Eunae Jang","Gyumin Lee","Hyejin Kang","Hyun Kim","Se Rin Yang","Sungdae Kim","Yoseob Shim"]
   
   return (
     <div className="App">

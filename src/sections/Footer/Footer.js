@@ -13,7 +13,7 @@ const Footer = ({year, nameList}) => {
     else{
       return (
         <>
-          {name},
+          {name},&ensp;
         </>
       )
     }
