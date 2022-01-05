@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import Footer from './sections/Footer/Footer';
 import Header from './sections/Header/Header';
 import SeatDisplay from './sections/SeatDisplay/SeatDisplay';
+import light from './assets/icons/light.svg';
 
 const App = () => {
   // TODO remove & data binding
@@ -33,11 +34,20 @@ const App = () => {
   원활한 목암 사용을 위해 입장 및 퇴장 시 현황표 수정을 반드시 해주시기 바랍니다. 
   장시간 (2시간 이상) 자리를 비울 시 다른 사람들이 이용할 수 있게 짐을 치워주세요.)`;
   const names = ["Eunae Jang","Gyumin Lee","Hyejin Kang","Hyun Kim","Se Rin Yang","Sungdae Kim","Yoseob Shim"]
-  
+
+  const [isActive, setActive] = useState("false");
+  const handleToggle = () => {
+    setActive(!isActive);
+  }
+
   return (
     <div className="App">
       <Header noticeTitle={title} noticeContent={content} />
+      <div className="Lamp-wrapper">
+        <img className={`LogoLamp ${isActive ? "active" : ""}`} src={light} alt="light"/>
+      </div>
       <SeatDisplay total='12'/>
+      <button className={`OnButton ${isActive ? "active" : ""}`} type="button" onClick={handleToggle}><span></span></button>
       <Footer year={2022} nameList={names}/>
     </div>
   );
