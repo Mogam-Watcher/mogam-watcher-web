@@ -1,7 +1,7 @@
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/firestore';
 import { initializeApp } from 'firebase/app';
-import { getFirestore, collection, getDocs, setDoc, query, where, doc, orderBy} from 'firebase/firestore';
+import { getFirestore, collection, getDocs, setDoc, query, where, doc, orderBy } from 'firebase/firestore';
 
 const firebaseConfig = {
   apiKey: process.env.FIREBASE_API_KEY,

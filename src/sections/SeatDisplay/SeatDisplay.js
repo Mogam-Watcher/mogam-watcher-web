@@ -45,3 +45,4 @@ const SeatDisplay = ({total}) => {
 }
 export {SeatContext};
 export default SeatDisplay;
+ 

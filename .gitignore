@@ -147,3 +147,13 @@ sketch
 
 # End of https://www.toptal.com/developers/gitignore/api/react,node
 
+#firebase
+.firebaserc
+firebase.json
+.firebase/hosting.cHVibGlj.cache
+public/404.html
+public/49e9a87531722e5e71f457de91accd69.svg
+public/57b73729285cf67ff5c968e6859d117e.svg
+public/672f523be30d0a6c0b89adf41a5c702a.svg
+public/bundle.js
+public/bundle.js.LICENSE.txt
