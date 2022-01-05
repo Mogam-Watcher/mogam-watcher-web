@@ -59,6 +59,9 @@
   }
   
 @media only screen and (min-width: 768px) {
+  .header-wrapper {
+    padding-top: 40px;
+  }
   .mogamLogo-wrapper {
     margin-left: 50px;
   }
@@ -85,9 +88,6 @@
   }
   .mogamLogo-wrapper {
     margin-left: 0;
-  }
-  .mogamLogo-wrapper {
-    height: 0;
   }
   .infoIcon-wrapper {
     justify-content: end;
