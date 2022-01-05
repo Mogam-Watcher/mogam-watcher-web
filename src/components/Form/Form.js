@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Form.css'
 
-const Form = ({identification, title, type, dataSet, formHint, formValue, isDisabled, setData}) => {
+const Form = ({inputRef, identification, title, type, dataSet, formHint, formValue, isDisabled, setData}) => {
   const defaultValue = (type==='select' && typeof formValue==='undefined') ? 'default' : formValue;
   const [value, setValue] = useState(defaultValue);
 
@@ -38,6 +38,7 @@ const Form = ({identification, title, type, dataSet, formHint, formValue, isDisa
       case 'text':
         return (
           <input 
+            ref={inputRef}
             className='form-block'
             id={identification} 
             type={type}
