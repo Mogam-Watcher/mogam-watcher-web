@@ -6,18 +6,18 @@
 /* mobile */
 .checkInModal-container {
   height: 70%;
+  width: 80%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 80%;
-  margin: 0 auto;
+  margin: 5% auto;
 }
 .checkInModal-item {
   flex-basis: 70px;
 }
 #checkInModal-title {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   font-size: var(--title-fontSize-sm);
   font-weight: 700;
   color: #1D757D;
@@ -25,6 +25,7 @@
 .baseButton {
   margin: 10px 0;
   height: 40px;
+  background-color: #DD712B;
 }
 
 /*  tablet */

@@ -67,6 +67,7 @@ const updateDate = async (today) => {
   await setDoc(dateDoc, dateToUpdate);
 
 }
+
 const updateTable = async (number, name, time, isOccupied) => {
 
   const dataToUpdate = {

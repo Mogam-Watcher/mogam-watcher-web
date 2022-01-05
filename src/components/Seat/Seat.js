@@ -10,14 +10,14 @@ const Seat = ({seatId, seatNumber, isOccupied, seatInfo}) => {
   const seatStyleVariant = isOccupied ? 'seat seat-occupied' : 'seat seat-vacant';
   const seatNumberStyleVariant = isOccupied ? 'seat-number seat-number-occupied' : 'seat-number seat-number-vacant';
   const info = isOccupied ? seatInfo : '';
-  const popup = () => {
+  const popup = (toggle) => {
     if(isOccupied) {
       return (
-        <ExtensionCheckout seatNumber={seatNumber}></ExtensionCheckout>
+        <ExtensionCheckout seatNumber={seatNumber} hide={toggle}></ExtensionCheckout>
       );
     } else {
       return (
-        <RegistrationForm seatNumber={seatNumber}></RegistrationForm>
+        <RegistrationForm seatNumber={seatNumber} hide={toggle}></RegistrationForm>
       );
     }
   };
@@ -33,7 +33,7 @@ const Seat = ({seatId, seatNumber, isOccupied, seatInfo}) => {
         </div>
       </button>
       <ModalPopup isShowing={isShowing} hide={toggle}>
-        {popup()}
+        {popup(toggle)}
       </ModalPopup>
     </>
   );
