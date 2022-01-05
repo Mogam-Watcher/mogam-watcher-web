@@ -26,15 +26,14 @@ const ExtensionCheckout = ({seatNumber, hide}) => {
     if(typeof endTime === 'undefined'){
       alert('예상 퇴실시간을 입력해주세요');
     } else if(confirm(confirmMessage)){
-      //TODO 스프레드시트 업데이트
       FirebaseLoader.updateTable(seatNumber, userName, endTime, true);
       alert(`${userName}님 ${seatNumber}번 자리 ${endTime}까지 사용하실 수 있습니다.`)
+      hide();
     }
   }
   const checkOut = () => {
     const confirmMessage = `${userName}님 ${seatNumber}번 자리 취소하시겠습니까?`
     if(confirm(confirmMessage)){
-      //TODO 스프레드시트 업데이트
       FirebaseLoader.deleteTable(seatNumber);
       alert(`${userName}님 ${seatNumber}번 자리 취소되었습니다.`);
       hide();
