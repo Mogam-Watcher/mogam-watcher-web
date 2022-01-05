@@ -16,7 +16,7 @@
     height: 80px;
   }
   .mogamLogo-title {
-    font-size: 1.8em;
+    font-size: 1.5em;
     font-weight: bold;
     color: #DD712B;
     display: flex;
@@ -57,6 +57,7 @@
   .notice-content::-webkit-scrollbar {
     display: none;
   }
+  
 @media only screen and (min-width: 768px) {
   .mogamLogo-wrapper {
     margin-left: 50px;
@@ -80,7 +81,7 @@
   .header-wrapper {
     width: 970px;
     margin: 0 auto;
-    padding-top: 30px;
+    padding-top: 90px;
   }
   .mogamLogo-wrapper {
     margin-left: 0;
