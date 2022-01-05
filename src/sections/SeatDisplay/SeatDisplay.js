@@ -36,8 +36,8 @@ const SeatDisplay = ({total}) => {
   return (
     <SeatContext.Provider value={(seatArray)}>
       <div className="seatDisplay-container">
-        <CurrentSeatDisplay isOccupied={false} seatsNumber={totalSeat - countVacantSeat} />
         <CurrentSeatDisplay isOccupied={true} seatsNumber={countVacantSeat} />
+        <CurrentSeatDisplay isOccupied={false} seatsNumber={totalSeat - countVacantSeat} />
         <SeatMap seatArray={seatArray}/>
       </div>
     </SeatContext.Provider>

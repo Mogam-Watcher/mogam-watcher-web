@@ -5,12 +5,12 @@ import './ExtensionCheckout.css';
 import { SeatContext } from '../SeatDisplay/SeatDisplay';
 import FirebaseLoader from '../../util/FirebaseLoader';
 
-const ExtensionCheckout = ({seatNumber}) => {
+const ExtensionCheckout = ({seatNumber, hide}) => {
   const [endTime, setEndTime] = useState();
   const seatArray = useContext(SeatContext);
   const userName = seatArray[seatNumber].userName;
-  console.log(seatArray[seatNumber]);
 
+ 
   function getEndTimeSet() {
     const currentTime = new Date().getHours();
     const maxEndTime = 24;
@@ -18,17 +18,18 @@ const ExtensionCheckout = ({seatNumber}) => {
     for(var i = 0; i < maxEndTime - currentTime; i++){
       endTimeSet[i] = {key: i + 1, contents: `${currentTime + i + 1}:00`};
     }
+    endTimeSet.push({key: endTimeSet.length + 1, contents: 'none'});
     return endTimeSet;
   }
   const extension = () => {
-    const confirmMessage = `${userName}님 ${seatNumber}번 자리 ${endTime}까지 연장하시겠습니까?`
+    const confirmMessage = `${userName}님 ${seatNumber}번 자리 ${endTime}까지 사용하시겠습니까?`
     //TODO 유효성검사
     if(typeof endTime === 'undefined'){
       alert('예상 퇴실시간을 입력해주세요');
     } else if(confirm(confirmMessage)){
       //TODO 스프레드시트 업데이트
       FirebaseLoader.updateTable(seatNumber, userName, endTime, true);
-      alert(`${userName}님 ${seatNumber}번 자리 ${endTime}까지 연장되셨습니다.`)
+      alert(`${userName}님 ${seatNumber}번 자리 ${endTime}까지 사용하실 수 있습니다.`)
     }
   }
   const checkOut = () => {
@@ -36,7 +37,8 @@ const ExtensionCheckout = ({seatNumber}) => {
     if(confirm(confirmMessage)){
       //TODO 스프레드시트 업데이트
       FirebaseLoader.deleteTable(seatNumber);
-      alert(`${userName}님 ${seatNumber}번 자리 취소되었습니다.`)
+      alert(`${userName}님 ${seatNumber}번 자리 취소되었습니다.`);
+      hide();
     }
   }
   return (
@@ -54,9 +56,9 @@ const ExtensionCheckout = ({seatNumber}) => {
         />
         <Form
          identification='' 
-         title='연장시간' 
+         title='변경시간' 
          type='select' 
-         formHint='희망연장시간' 
+         formHint='희망변경시간' 
          dataSet={getEndTimeSet()} 
          isDisabled={false}
          setData={setEndTime}
@@ -65,7 +67,7 @@ const ExtensionCheckout = ({seatNumber}) => {
       <div className="checkoutModal-item" id="extensionButton">
         <BaseButton
          buttonType="submit" 
-         title="Extension" 
+         title="변 경"
          clickEvent={extension} 
         />
       </div>
@@ -73,7 +75,7 @@ const ExtensionCheckout = ({seatNumber}) => {
       <div className="checkoutModal-item" id="checkoutButton">
         <BaseButton
          buttonType="submit" 
-         title="Check Out" 
+         title="체 크 아 웃"
          clickEvent={checkOut} 
         />
       </div>
