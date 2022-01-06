@@ -4,7 +4,7 @@ import IconButton from '../../components/IconButton/IconButton';
 import useModal from '../../components/ModalPopup/useModal'
 import ModalPopup from '../../components/ModalPopup/ModalPopup';
 import mogamIcon from '../../assets/icons/mogamIcon.svg';
-import infoIcon from '../../assets/icons/infoIcon.svg';
+import infoIcon from '../../assets/icons/infoIcon_green.svg';
 
 const Header = ({noticeTitle, noticeContent}) => {
   const {isShowing, toggle} = useModal();
