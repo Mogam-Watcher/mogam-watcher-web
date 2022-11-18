@@ -6,7 +6,7 @@
 
 # Co-developer
 
-- Hyejin Kang / Serin Yang / Sungdae Kim / Yoseob Shim / Eunae Jang /Gyumin Lee
+Hyejin Kang / Serin Yang / Sungdae Kim / Yoseob Shim / Eunae Jang /Gyumin Lee
 
 # Technologies
 
