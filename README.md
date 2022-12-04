@@ -10,7 +10,7 @@ Hyun Kim / Hyejin Kang / Serin Yang / Sungdae Kim / Yoseob Shim / Eunae Jang / G
 
 # Technologies
 
-- **React Native** - Development
+- **React** - Development
 - **Github** - Project management
 - **Scrum** - Project management
 - **Firebase** - Deploy
